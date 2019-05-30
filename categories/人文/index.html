@@ -45,6 +45,32 @@
 
 
 
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="https://fonts.cat.net/css?family=Monda:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
 
 
 
@@ -98,7 +124,7 @@
     root: '/',
     scheme: 'Muse',
     version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -143,7 +169,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-right ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -612,6 +638,28 @@
 
 
 
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'z1l38XWecBYuXJnanUhRUHeW-gzGzoHsz',
+        appKey: '3Q5kRQl7StYiYGNqn6NeLIMc',
+        placeholder: 'Just go go',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
 
 
   
@@ -940,102 +988,6 @@
   
 
   
-  <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase-firestore.js"></script>
-  
-  <script>
-    (function () {
-
-      firebase.initializeApp({
-        apiKey: '3Q5kRQl7StYiYGNqn6NeLIMc',
-        projectId: 'z1l38XWecBYuXJnanUhRUHeW-gzGzoHsz'
-      })
-
-      function getCount(doc, increaseCount) {
-        //increaseCount will be false when not in article page
-
-        return doc.get().then(function (d) {
-          var count
-          if (!d.exists) { //has no data, initialize count
-            if (increaseCount) {
-              doc.set({
-                count: 1
-              })
-              count = 1
-            }
-            else {
-              count = 0
-            }
-          }
-          else { //has data
-            count = d.data().count
-            if (increaseCount) {
-              if (!(window.localStorage && window.localStorage.getItem(title))) { //if first view this article
-                doc.set({ //increase count
-                  count: count + 1
-                })
-                count++
-              }
-            }
-          }
-          if (window.localStorage && increaseCount) { //mark as visited
-            localStorage.setItem(title, true)
-          }
-
-          return count
-        })
-      }
-
-      function appendCountTo(el) {
-        return function (count) {
-          $(el).append(
-            $('<span>').addClass('post-visitors-count').append(
-              $('<span>').addClass('post-meta-divider').text('|')
-            ).append(
-              $('<span>').addClass('post-meta-item-icon').append(
-                $('<i>').addClass('fa fa-users')
-              )
-              ).append($('<span>').text('Visitors ' + count))
-          )
-        }
-      }
-
-      var db = firebase.firestore()
-      var articles = db.collection('articles')
-
-      //https://hexo.io/zh-tw/docs/variables.html
-      var isPost = ''.length > 0
-      var isArchive = '' === 'true'
-      var isCategory = ''.length > 0
-      var isTag = ''.length > 0
-
-      if (isPost) { //is article page
-        var title = ''
-        var doc = articles.doc(title)
-
-        getCount(doc, true).then(appendCountTo($('.post-meta')))
-      }
-      else if (!isArchive && !isCategory && !isTag) { //is index page
-        var titles = [] //array to titles
-
-        var postsstr = 'titles.push("《遥远的救赎主》（豆豆著）读后感");' //if you have a better way to get titles of posts, please change it
-        eval(postsstr)
-
-        var promises = titles.map(function (title) {
-          return articles.doc(title)
-        }).map(function (doc) {
-          return getCount(doc)
-        })
-        Promise.all(promises).then(function (counts) {
-          var metas = $('.post-meta')
-          counts.forEach(function (val, idx) {
-            appendCountTo(metas[idx])(val)
-          })
-        })
-      }
-    })()
-  </script>
-
 
   
 
