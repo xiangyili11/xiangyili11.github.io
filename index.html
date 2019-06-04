@@ -456,7 +456,8 @@
           
             <h3 id="生物网络的概念（一）毗邻矩阵（Adjacency-Matrix）"><a href="# 生物网络的概念（一）毗邻矩阵（Adjacency-Matrix）" class="headerlink" title="生物网络的概念（一）毗邻矩阵（Adjacency Matrix）"></a><center>生物网络的概念（一）毗邻矩阵（Adjacency Matrix）</center></h3><h2 id="网络的毗邻矩阵"><a href="# 网络的毗邻矩阵" class="headerlink" title="网络的毗邻矩阵"></a>网络的毗邻矩阵</h2><p>&ensp;&ensp;&ensp;&ensp; 网络主要由节点（node）和边（edge）组成，是一种研究节点与节点相互关系的重要工具，如描述蛋白质之间相互作用的蛋白质相互作用网络，描述基因之间共表达关系的基因共表达网络等等。<br>&ensp;&ensp;&ensp;&ensp; 毗邻矩阵（Adjacency matrix）是一种描述网络中相邻两个节点连接程度（connection strength）的 n×n 维矩阵。设有一个毗邻矩阵 A，可以写成如下格式：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">A = (A_&#123;ij&#125;)</span><br></pre></td></tr></table></figure>
-<p>$A = (A_{ij})$</p>
+<center> $A = (A_{ij})$ </center>
+
 <p>&ensp;&ensp;&ensp;&ensp; 其中 Aij 分别表示第 i 个和第 j 个节点的毗邻值（可以理解为两个节点的相互关系强弱）。对于无加权网络（unweighted network）来说，若两个节点的相互关系大于某个阈值则 Aij 等于 1；反之，则这个值为 0。总而言之，无向网络（undirected network）的毗邻矩阵的性质如下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">0 \leq A_&#123;ij&#125;  \leq1</span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">A_&#123;ij&#125; = A_&#123;ji&#125;</span><br></pre></td></tr></table></figure>
