@@ -105,19 +105,19 @@
 
 
 
-<meta name="description" content="生物网络的概念（一）毗邻矩阵（Adjacency Matrix）网络的毗邻矩阵&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;网络主要由节点（node）和边（edge）组成，是一种研究节点与节点相互关系的重要工具，如描述蛋白质之间相互作用的蛋白质相互作用网络，描述基因之间共表达关系的基因共表达网络等等。">
+<meta name="description" content="网络的毗邻矩阵&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;网络主要由节点（node）和边（edge）组成，是一种研究节点与节点相互关系的重要工具，如描述蛋白质之间相互作用的蛋白质相互作用网络，描述基因之间共表达关系的基因共表达网络等等。">
 <meta name="keywords" content="算法">
 <meta property="og:type" content="article">
 <meta property="og:title" content="生物网络的概念（一）毗邻矩阵（Adjacency Matrix）">
 <meta property="og:url" content="https://eatdrinkbreathe.top/2019/06/04/生物网络-毗邻矩阵/index.html">
 <meta property="og:site_name" content="水流云在&#39;s blog">
-<meta property="og:description" content="生物网络的概念（一）毗邻矩阵（Adjacency Matrix）网络的毗邻矩阵&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;网络主要由节点（node）和边（edge）组成，是一种研究节点与节点相互关系的重要工具，如描述蛋白质之间相互作用的蛋白质相互作用网络，描述基因之间共表达关系的基因共表达网络等等。">
+<meta property="og:description" content="网络的毗邻矩阵&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;网络主要由节点（node）和边（edge）组成，是一种研究节点与节点相互关系的重要工具，如描述蛋白质之间相互作用的蛋白质相互作用网络，描述基因之间共表达关系的基因共表达网络等等。">
 <meta property="og:locale" content="zh-hans">
 <meta property="og:image" content="http://psg6m8ucy.bkt.clouddn.com/%E6%8D%95%E8%8E%B7.PNG">
-<meta property="og:updated_time" content="2019-06-05T04:46:02.698Z">
+<meta property="og:updated_time" content="2019-06-05T04:54:26.834Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="生物网络的概念（一）毗邻矩阵（Adjacency Matrix）">
-<meta name="twitter:description" content="生物网络的概念（一）毗邻矩阵（Adjacency Matrix）网络的毗邻矩阵&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;网络主要由节点（node）和边（edge）组成，是一种研究节点与节点相互关系的重要工具，如描述蛋白质之间相互作用的蛋白质相互作用网络，描述基因之间共表达关系的基因共表达网络等等。">
+<meta name="twitter:description" content="网络的毗邻矩阵&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;网络主要由节点（node）和边（edge）组成，是一种研究节点与节点相互关系的重要工具，如描述蛋白质之间相互作用的蛋白质相互作用网络，描述基因之间共表达关系的基因共表达网络等等。">
 <meta name="twitter:image" content="http://psg6m8ucy.bkt.clouddn.com/%E6%8D%95%E8%8E%B7.PNG">
 
 
@@ -421,7 +421,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  641字
+                  627字
                 </span>
               
 
@@ -458,7 +458,7 @@
       
 
       
-        <h3 id="生物网络的概念（一）毗邻矩阵（Adjacency-Matrix）"><a href="# 生物网络的概念（一）毗邻矩阵（Adjacency-Matrix）" class="headerlink" title="生物网络的概念（一）毗邻矩阵（Adjacency Matrix）"></a><center>生物网络的概念（一）毗邻矩阵（Adjacency Matrix）</center></h3><h2 id="网络的毗邻矩阵"><a href="# 网络的毗邻矩阵" class="headerlink" title="网络的毗邻矩阵"></a>网络的毗邻矩阵</h2><p>&ensp;&ensp;&ensp;&ensp; 网络主要由节点（node）和边（edge）组成，是一种研究节点与节点相互关系的重要工具，如描述蛋白质之间相互作用的蛋白质相互作用网络，描述基因之间共表达关系的基因共表达网络等等。<a id="more"></a><br>&ensp;&ensp;&ensp;&ensp; 毗邻矩阵（Adjacency matrix）是一种描述网络中相邻两个节点连接程度（connection strength）的 n×n 维矩阵。设有一个毗邻矩阵 A，可以写成如下格式：</p>
+        <h1 id="网络的毗邻矩阵"><a href="# 网络的毗邻矩阵" class="headerlink" title="网络的毗邻矩阵"></a>网络的毗邻矩阵</h1><p>&ensp;&ensp;&ensp;&ensp; 网络主要由节点（node）和边（edge）组成，是一种研究节点与节点相互关系的重要工具，如描述蛋白质之间相互作用的蛋白质相互作用网络，描述基因之间共表达关系的基因共表达网络等等。<a id="more"></a><br>&ensp;&ensp;&ensp;&ensp; 毗邻矩阵（Adjacency matrix）是一种描述网络中相邻两个节点连接程度（connection strength）的 n×n 维矩阵。设有一个毗邻矩阵 A，可以写成如下格式：</p>
 <center> $A = (A_{ij})$ </center>
 
 
@@ -710,7 +710,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#生物网络的概念（一）毗邻矩阵（Adjacency-Matrix）"><span class="nav-number">1.</span> <span class="nav-text">生物网络的概念（一）毗邻矩阵（Adjacency Matrix）</span></a></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#网络的毗邻矩阵"><span class="nav-number"></span> <span class="nav-text">网络的毗邻矩阵</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总连接度（connectivity- 及其相关概念"><span class="nav-number"></span> <span class="nav-text">总连接度（connectivity)及其相关概念 </span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#社交网络分析：感染网络（Affection-Network）"><span class="nav-number"></span> <span class="nav-text">社交网络分析：感染网络（Affection Network）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#END"><span class="nav-number"></span> <span class="nav-text"> END </span></a></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#网络的毗邻矩阵"><span class="nav-number">1.</span> <span class="nav-text">网络的毗邻矩阵</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总连接度（connectivity- 及其相关概念"><span class="nav-number">2.</span> <span class="nav-text">总连接度（connectivity)及其相关概念 </span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#社交网络分析：感染网络（Affection-Network）"><span class="nav-number">3.</span> <span class="nav-text">社交网络分析：感染网络（Affection Network）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#END"><span class="nav-number">4.</span> <span class="nav-text"> END </span></a></li></ol></div>
             
 
           </div>
