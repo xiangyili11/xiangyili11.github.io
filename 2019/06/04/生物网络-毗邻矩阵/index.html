@@ -105,19 +105,19 @@
 
 
 
-<meta name="description" content="网络的毗邻矩阵&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;网络主要由节点（node）和边（edge）组成，是一种研究节点与节点相互关系的重要工具，如描述蛋白质之间相互作用的蛋白质相互作用网络，描述基因之间共表达关系的基因共表达网络等等。">
+<meta name="description" content="网络的毗邻矩阵 &amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;网络主要由节点（node）和边（edge）组成，是一种研究节点与节点相互关系的重要工具，如描述蛋白质之间相互作用的蛋白质相互作用网络，描述基因之间共表达关系的基因共表达网络等等。">
 <meta name="keywords" content="算法">
 <meta property="og:type" content="article">
 <meta property="og:title" content="生物网络的概念（一）毗邻矩阵（Adjacency Matrix）">
 <meta property="og:url" content="https://eatdrinkbreathe.top/2019/06/04/生物网络-毗邻矩阵/index.html">
 <meta property="og:site_name" content="水流云在&#39;s blog">
-<meta property="og:description" content="网络的毗邻矩阵&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;网络主要由节点（node）和边（edge）组成，是一种研究节点与节点相互关系的重要工具，如描述蛋白质之间相互作用的蛋白质相互作用网络，描述基因之间共表达关系的基因共表达网络等等。">
+<meta property="og:description" content="网络的毗邻矩阵 &amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;网络主要由节点（node）和边（edge）组成，是一种研究节点与节点相互关系的重要工具，如描述蛋白质之间相互作用的蛋白质相互作用网络，描述基因之间共表达关系的基因共表达网络等等。">
 <meta property="og:locale" content="zh-hans">
 <meta property="og:image" content="http://psg6m8ucy.bkt.clouddn.com/%E6%8D%95%E8%8E%B7.PNG">
-<meta property="og:updated_time" content="2019-06-05T04:54:26.834Z">
+<meta property="og:updated_time" content="2019-06-05T05:01:00.320Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="生物网络的概念（一）毗邻矩阵（Adjacency Matrix）">
-<meta name="twitter:description" content="网络的毗邻矩阵&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;网络主要由节点（node）和边（edge）组成，是一种研究节点与节点相互关系的重要工具，如描述蛋白质之间相互作用的蛋白质相互作用网络，描述基因之间共表达关系的基因共表达网络等等。">
+<meta name="twitter:description" content="网络的毗邻矩阵 &amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;网络主要由节点（node）和边（edge）组成，是一种研究节点与节点相互关系的重要工具，如描述蛋白质之间相互作用的蛋白质相互作用网络，描述基因之间共表达关系的基因共表达网络等等。">
 <meta name="twitter:image" content="http://psg6m8ucy.bkt.clouddn.com/%E6%8D%95%E8%8E%B7.PNG">
 
 
@@ -458,7 +458,7 @@
       
 
       
-        <h1 id="网络的毗邻矩阵"><a href="# 网络的毗邻矩阵" class="headerlink" title="网络的毗邻矩阵"></a>网络的毗邻矩阵</h1><p>&ensp;&ensp;&ensp;&ensp; 网络主要由节点（node）和边（edge）组成，是一种研究节点与节点相互关系的重要工具，如描述蛋白质之间相互作用的蛋白质相互作用网络，描述基因之间共表达关系的基因共表达网络等等。<a id="more"></a><br>&ensp;&ensp;&ensp;&ensp; 毗邻矩阵（Adjacency matrix）是一种描述网络中相邻两个节点连接程度（connection strength）的 n×n 维矩阵。设有一个毗邻矩阵 A，可以写成如下格式：</p>
+        <p><strong> 网络的毗邻矩阵 </strong><br>&ensp;&ensp;&ensp;&ensp; 网络主要由节点（node）和边（edge）组成，是一种研究节点与节点相互关系的重要工具，如描述蛋白质之间相互作用的蛋白质相互作用网络，描述基因之间共表达关系的基因共表达网络等等。<a id="more"></a><br>&ensp;&ensp;&ensp;&ensp; 毗邻矩阵（Adjacency matrix）是一种描述网络中相邻两个节点连接程度（connection strength）的 n×n 维矩阵。设有一个毗邻矩阵 A，可以写成如下格式：</p>
 <center> $A = (A_{ij})$ </center>
 
 
@@ -470,13 +470,14 @@
 <center> $A_{ii} = 1$ </center> 
 
 <hr>
-<h1 id="总连接度（connectivity- 及其相关概念"><a href="# 总连接度（connectivity- 及其相关概念" class="headerlink" title="总连接度（connectivity)及其相关概念"></a>总连接度（connectivity)及其相关概念 </h1><p>&ensp;&ensp;&ensp;&ensp; 网络的总连接度(connectivity) 又叫度(degree)。它的计算公式如下：</p>
+<p><strong> 总连接度（connectivity)及其相关概念 </strong><br>&ensp;&ensp;&ensp;&ensp; 网络的总连接度 (connectivity) 又叫度(degree)。它的计算公式如下：</p>
 <center> $k_i = \sum_{j \neq i}A_{ij}$ </center> 
 
 <p>&ensp;&ensp;&ensp;&ensp; 在无加权网络中，节点 i 的总连接度 ki 就等于与节点 i 连接的所有点的总数目。<br>&ensp;&ensp;&ensp;&ensp; 在加权网络中，节点 i 的总连接度等于与节点 i 连接的各个点毗邻值（Aij)的总和。如下图所示：</p>
 <p><img src="http://psg6m8ucy.bkt.clouddn.com/%E6%8D%95%E8%8E%B7.PNG" alt></p>
 <hr>
-<h1 id="社交网络分析：感染网络（Affection-Network）"><a href="# 社交网络分析：感染网络（Affection-Network）" class="headerlink" title="社交网络分析：感染网络（Affection Network）"></a>社交网络分析：感染网络（Affection Network）</h1><p>&ensp;&ensp;&ensp;&ensp; 马克思曾给人下了个定义：人是各种社会关系的总和。可以通过人际关系网络来理解理解网络的基本特性。把人作为网络（人际关系网）的节点，两个人（节点）的亲近程度作为他们之间的感染力（毗邻值）。我们可以这样假设：两个人强烈地喜欢欣赏对方，那么他们之间的感染力就非常强（毗邻值 Aij 就等于 1）；若他们彼此无感、不感染（但也不排斥，Aij 就等于 0.5）；若他们彼此极度厌恶，那么没有一点感染力（Aij 就等于 0）。最终某个人与所有人的连接度之和（标化花后）可以作为他的受欢迎程度（connectivity)，这个 connectivity 值越大说明这个人越受人爱戴。</p>
+<p><strong> 社交网络分析：感染网络（Affection Network） </strong></p>
+<p>&ensp;&ensp;&ensp;&ensp; 马克思曾给人下了个定义：人是各种社会关系的总和。可以通过人际关系网络来理解理解网络的基本特性。把人作为网络（人际关系网）的节点，两个人（节点）的亲近程度作为他们之间的感染力（毗邻值）。我们可以这样假设：两个人强烈地喜欢欣赏对方，那么他们之间的感染力就非常强（毗邻值 Aij 就等于 1）；若他们彼此无感、不感染（但也不排斥，Aij 就等于 0.5）；若他们彼此极度厌恶，那么没有一点感染力（Aij 就等于 0）。最终某个人与所有人的连接度之和（标化花后）可以作为他的受欢迎程度（connectivity)，这个 connectivity 值越大说明这个人越受人爱戴。</p>
 <blockquote>
 <p>参考资料：Horvath, Steve. Weighted network analysis: applications in genomics and systems biology. Springer Science &amp; Business Media, 2011.</p>
 </blockquote>
@@ -710,7 +711,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#网络的毗邻矩阵"><span class="nav-number">1.</span> <span class="nav-text">网络的毗邻矩阵</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总连接度（connectivity- 及其相关概念"><span class="nav-number">2.</span> <span class="nav-text">总连接度（connectivity)及其相关概念 </span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#社交网络分析：感染网络（Affection-Network）"><span class="nav-number">3.</span> <span class="nav-text">社交网络分析：感染网络（Affection Network）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#END"><span class="nav-number">4.</span> <span class="nav-text"> END </span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#END"><span class="nav-number">1.</span> <span class="nav-text"> END </span></a></li></ol></div>
             
 
           </div>
