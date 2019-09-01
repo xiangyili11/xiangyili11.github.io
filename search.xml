@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>药物基因组学数据库 Connectivity map 简介</title>
+      <link href="/2019/09/01/%E8%8D%AF%E7%89%A9%E5%9F%BA%E5%9B%A0%E7%BB%84%E5%AD%A6%E6%95%B0%E6%8D%AE%E5%BA%93Connectivity%20map%E7%AE%80%E4%BB%8B/"/>
+      <url>/2019/09/01/%E8%8D%AF%E7%89%A9%E5%9F%BA%E5%9B%A0%E7%BB%84%E5%AD%A6%E6%95%B0%E6%8D%AE%E5%BA%93Connectivity%20map%E7%AE%80%E4%BB%8B/</url>
+      
+        <content type="html"><![CDATA[<h2 id="药物基因组学数据库 Connectivity-map 简介"><a href="# 药物基因组学数据库 Connectivity-map 简介" class="headerlink" title="药物基因组学数据库 Connectivity map 简介"></a>药物基因组学数据库 Connectivity map 简介 </h2><p> 摘要：connectivity map 是药物基因组学研究领域的重要数据库，是计算生物学和药物筛选研究人员做研究时不得不重视的数据库。它不仅提供大量宝贵的药物处理人类细胞系前后的基因表达谱数据，而且也提供了基于模式匹配算法的在线工具，用户提交合适的基因列表就能得到该数据库中与之相关的药物。<br><a id="more"></a></p><h3 id="Connectivity-map 的重要性及地位、发展历史及版本"><a href="#Connectivity-map 的重要性及地位、发展历史及版本" class="headerlink" title="Connectivity map 的重要性及地位、发展历史及版本"></a>Connectivity map 的重要性及地位、发展历史及版本 </h3><p> 做药物筛选试验的研究人员以及做计算生物学数据分析的研究人员，应该对美国博德研究所的 <a href="https://portals.broadinstitute.org/cmap/" target="_blank" rel="noopener">connectivity map</a>(CMap) 数据库都不陌生。CMap 是药物基因组学研究领域内非常重要的数据库，目前网页版数据库已更新至第二版。该数据库自 2006 年发布至 2019 年 9 月初已被引用超过 3000 次（数据来源于谷歌学术）。Cmap 旨在通过基因表达量的变化来发现药物、基因和疾病之间的功能联系。最近十年来在药物组合和药物重定位研究中扮演着越来越重要的角色。</p><h3 id="数据量及数据类型"><a href="# 数据量及数据类型" class="headerlink" title="数据量及数据类型"></a>数据量及数据类型</h3><p>CMap 数据库包含了 1309 种小分子药物处理 5 种人类肿瘤细胞系前后的基因芯片数据。处理条件多种多样，包括不同药物、不同浓度、不同处理时长等等，大多数处理条件都有三个处理样本以及对应的三个及以上空白对照组。</p><h3 id="CMap 的结果解释"><a href="#CMap 的结果解释" class="headerlink" title="CMap 的结果解释"></a>CMap 的结果解释 </h3><p> 做计算生物学的用户往往会把 CMap 所有的基因芯片数据下载下来然后做各自的后续分析，而对于普通湿实验用户，该数据库也提供了网页版分析工具，只要用户提供两个文档（分别包含上调基因和下调基因）就能够得到 CMap 中与用户提供基因列表相关（正相关和负相关）的药物列表，从而为用户进行药物分析提供指导。用户最感兴趣应该就是 barview 中红绿颜色代表的药物了，也就是 connectivity score 不为零的那些 instance 代表的药物。具体来说，用户按要求上传自己的基因列表后会得到数据库返回的结果，如下图所示:</p><p><img src="http://px5k9sfp1.bkt.clouddn.com/cmap%20result.PNG" alt></p><p>针对用户提供的两个基因列表:<br><strong>barview</strong>给出 CMap 所有 instance(一种药物在一种浓度下处理特定时长的一种细胞系，产生的数据就是一个 instance）与其关联度（connectivity score）的图形化展示。绿色代表正相关，红色代表负相关，灰色代表不相关。每个正值 connectivity score 代表正相关，背后的假设是药物扰动的表达谱与疾病扰动的表达谱正相关，可以简单地认为药物可以引起或者加剧该疾病状态；反之，每个负值 connectivity score 代表负相关，背后的假设是药物扰动的表达谱与疾病扰动的表达谱负相关，可以简单地认为药物能够减轻甚至逆转该疾病状态。  </p><p><strong>rank</strong>是所有 instance 放在一起后的 connectivity score 排名，connectivity score 越大排名越靠前。</p><p><strong>batch</strong>是 instance 产生的批次，7000 多个基因表达谱数据由多个不同批次产生。  </p><p><strong>dose</strong>药物处理细胞系时的浓度。</p><p><strong>cell line</strong>是药物处理的细胞系类型。</p><p><strong>score</strong>是指 connectivity score，由 up score 和 down score 计算后再经过标准化得到，是相对数值。</p><p><strong>up/down</strong>分别指用户上传的上调 / 下调基因列表对每个 instance 的打分，是绝对数值。 </p><p><strong>ATC</strong>是指该药物的 ATC code 值，是一种国际通用的药物分类系统。 </p><p><strong>instance_id</strong>是指每个 instance 的标识 ID。</p><h1 id="END"><a href="#END" class="headerlink" title="END"></a><center> END </center></h1>]]></content>
+      
+      
+      <categories>
+          
+          <category> 生物信息学 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 数据库介绍 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>生物码农 VS 计算生物学家</title>
       <link href="/2019/08/25/%E8%AE%A1%E7%AE%97%E7%94%9F%E7%89%A9%E5%AD%A6%E5%AE%B6/"/>
       <url>/2019/08/25/%E8%AE%A1%E7%AE%97%E7%94%9F%E7%89%A9%E5%AD%A6%E5%AE%B6/</url>
