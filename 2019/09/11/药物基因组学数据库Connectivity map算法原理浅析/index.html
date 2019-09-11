@@ -116,7 +116,7 @@
 <meta property="og:image" content="http://px5k9sfp1.bkt.clouddn.com/image011.gif">
 <meta property="og:image" content="http://px5k9sfp1.bkt.clouddn.com/image013.gif">
 <meta property="og:image" content="http://px5k9sfp1.bkt.clouddn.com/1362527-20180331215135026-1073998294.png">
-<meta property="og:updated_time" content="2019-09-11T09:29:07.473Z">
+<meta property="og:updated_time" content="2019-09-11T09:31:54.253Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="药物基因组学数据库 Connectivity map 算法原理浅析">
 <meta name="twitter:description" content="摘要：Connectivity map是药物基因组学研究领域的一个宝库，近些年来有许多计算生物学家开始对这个重要数据库进行挖掘，进行了包括但不限于组合药物研究、药物重定位研究等等，也有许多计算生物学家对connectivity map网站提供的联结“药物-基因-疾病”的算法提出了改进。他山之石可以攻玉，本文将尝试对connectivity map所使用的Kolmogorov–Smirnov tes">
@@ -450,7 +450,7 @@
 
 
 <p>其中，I 是 indicator function, 即 </p>
-<center> $I\{x_i\leq x\}=\begin{cases}1,\quad x_i\leq x\\0,\quad otherwise\end{cases}$ </center> 
+<center> $I\{x_i\leq x\}=\begin{cases}1,\quad x_i\leq x\\0,\quad otherwise\end{cases}$ </center>
 
 
 <p>因此，求经验分布函数 Fn(x) 在一点 x 处的值，只要求出随机变量 X 的 n 个观测值 x1,x2,⋯,xnx 中小于或等于 x 的个数，再除以观测次数 n 即可。由此可见，Fn(x) 就是在 n 次重复独立实验中事件 {X≤x}出现的频率。</p>
@@ -473,7 +473,7 @@
 
 
 <p>(5) 所以 CMap 算法的 KS 统计量计算公式为：</p>
-<p><img src="http://px5k9sfp1.bkt.clouddn.com/image011.gif" alt>  </p>
+<p><img src="http://px5k9sfp1.bkt.clouddn.com/image011.gif" alt></p>
 <p><img src="http://px5k9sfp1.bkt.clouddn.com/image013.gif" alt></p>
 <p>其中 if  a &gt; b，KSTop/Bottom = a<br>　　 else       KSTop/Bottom = -b；<br>　　 if  KSTop * KSBottom &lt; 0<br>　　 score = KSTop – KSBottom<br>　　 else  score = 0</p>
 <p>对于该算法的一些理解：<br>（1）由于 KS 检验的统计量就是两个经验分布的最大距离（差值），那么计算 a 了之后为什么还要计算 b？我们可以看到 b 几乎等于 -a，仅仅加上了一个 1/t，当 t 很大时 1/t 可以忽略不计。这是因为 a 计算的时候包含正负符号，并不是真正意义上的距离（绝对值）。例如假设 a=max{-3,-2,-1,0,1,2}, 那么 a=2，我们知道 2 并不是最大距离，因为还有一个 -3, 因此为了得到真正意义上的最大距离，需要计算 b。</p>
