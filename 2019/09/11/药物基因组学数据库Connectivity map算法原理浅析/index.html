@@ -116,7 +116,7 @@
 <meta property="og:image" content="http://px5k9sfp1.bkt.clouddn.com/image011.gif">
 <meta property="og:image" content="http://px5k9sfp1.bkt.clouddn.com/image013.gif">
 <meta property="og:image" content="http://px5k9sfp1.bkt.clouddn.com/1362527-20180331215135026-1073998294.png">
-<meta property="og:updated_time" content="2019-09-11T09:42:20.418Z">
+<meta property="og:updated_time" content="2019-09-11T09:44:39.725Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="药物基因组学数据库 Connectivity map 算法原理浅析">
 <meta name="twitter:description" content="摘要：Connectivity map是药物基因组学研究领域的一个宝库，近些年来有许多计算生物学家开始对这个重要数据库进行挖掘，进行了包括但不限于组合药物研究、药物重定位研究等等，也有许多计算生物学家对connectivity map网站提供的联结“药物-基因-疾病”的算法提出了改进。他山之石可以攻玉，本文将尝试对connectivity map所使用的Kolmogorov–Smirnov tes">
@@ -465,7 +465,7 @@ k/n,\quad x^*_{k}\leq x<x^*_{k+1}, \quad k=1,2,\cdots,n-1\\
 
 <p>(2)  假设建立以后就要计算检验统计量了。K-S 检验的统计量定义是：样本累计频率与理论分布累计概率的绝对差，令最大的绝对差为 Dn，Dn=max{[Fn(x) - F(x)]};<br>(3) 用样本容量 n 和显著水平 a 查出临界值 Dna；<br>(4) 如果 Dn&lt; Dna，则认为拟合是满意的。</p>
 <h3 id="connectivity-score 背后的假设及意义"><a href="#connectivity-score 背后的假设及意义" class="headerlink" title="connectivity score 背后的假设及意义"></a>connectivity score 背后的假设及意义 </h3><p> 如果某疾病引起的上调基因列表表达量的统计分布与某药物引起的下调基因列表表达量分布一致，同时 / 或者该疾病引起的下调基因列表表达量的统计分布与该药物引起的上调基因列表表达量分布一致，那么就可能说明疾病影响的基因与药物影响的基因属于同一分布，来自同一总体，而作用方向相反，正负得零，那么该药物就可能使疾病状态恢复到正常。</p>
-<h3 id="connectivity-score 的计算方法"><a href="#connectivity-score 的计算方法" class="headerlink" title="connectivity score 的计算方法"></a>connectivity score 的计算方法 </h3><p> 由于 KS 检验是一种非参数方法，不依赖均值的位置，适用范围广，对于基因表达量的统计分布来说是比较稳妥的统计检验方法。因此 CMAP 算法采用基于排序的 Kolmogorov-Smirnov (KS)统计方法，将疾病基因表达谱与药物表达谱联系起来。KS 统计量（up score 和 down score）是根据疾病基因表达谱 (即 top 和 down 列表) 在药物表达谱中的排名计算得到的。<br>具体做法是：<br>(1) 将基因按照药物处理细胞系后产生变化的大小降序排列，即药物上调的倍数越大排名越靠前，rank=1, 2, …, 22283；<br>(2) 将疾病基因列表与药物表达谱基因列表取交集，得到一个新的基因列表 CommonGenes；<br>(3) 得到 CommonGenes 在降序排序后药物表达谱的排名，然后将排名升序排列，假设向量大小为 t，则 j= 1, 2, …, t。构建经验分布函数，对于 CommonGenes 来说，其经验分布函数是</p>
+<h3 id="connectivity-score 的计算方法"><a href="#connectivity-score 的计算方法" class="headerlink" title="connectivity score 的计算方法"></a>connectivity score 的计算方法 </h3><p> 由于 KS 检验是一种非参数方法，不依赖均值的位置，适用范围广，对于基因表达量的统计分布来说是比较稳妥的统计检验方法。因此 CMAP 算法采用基于排序的 Kolmogorov-Smirnov (KS)统计方法，将疾病基因表达谱与药物表达谱联系起来。KS 统计量（up score 和 down score）是根据疾病基因表达谱 (即 top 和 down 列表) 在药物表达谱中的排名计算得到的。<br>具体做法是：<br>(1) 将基因按照药物处理细胞系后产生变化的大小降序排列，即药物上调的倍数越大排名越靠前，rank=1, 2, …, 22283；<br>(2)将疾病基因列表与药物表达谱基因列表取交集，得到一个新的基因列表 CommonGenes；<br>(3) 得到 CommonGenes 在降序排序后药物表达谱的排名，然后将排名升序排列，假设向量大小为 t，则 j= 1, 2, …, t。构建经验分布函数，对于 CommonGenes 来说，其经验分布函数是</p>
 <center> $F_n(j)=\frac{j}{t}$ </center>
 
 
