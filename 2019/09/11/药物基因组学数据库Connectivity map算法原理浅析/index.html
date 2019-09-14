@@ -105,21 +105,21 @@
 
 
 
-<meta name="description" content="摘要：Connectivity map是药物基因组学研究领域的一个宝库，近些年来有许多计算生物学家开始对这个重要数据库进行挖掘，进行了包括但不限于组合药物研究、药物重定位研究等等，也有许多计算生物学家对connectivity map网站提供的联结“药物-基因-疾病”的算法提出了改进。他山之石可以攻玉，本文将尝试对connectivity map所使用的Kolmogorov–Smirnov tes">
+<meta name="description" content="摘要：Connectivity Map是药物基因组学研究领域的一个宝库，近些年来有许多计算生物学家开始对这个重要数据库进行挖掘，进行了包括但不限于组合药物研究、药物重定位研究等等，也有许多计算生物学家对connectivity map网站提供的联结“药物-基因-疾病”的算法提出了改进。他山之石可以攻玉，本文将尝试对connectivity map所使用的Kolmogorov–Smirnov tes">
 <meta name="keywords" content="算法,Connectivity Map,药物基因组学,拟合优度检验">
 <meta property="og:type" content="article">
 <meta property="og:title" content="药物基因组学数据库 Connectivity Map 算法浅析">
 <meta property="og:url" content="https://eatdrinkbreathe.top/2019/09/11/药物基因组学数据库Connectivity map算法原理浅析/index.html">
 <meta property="og:site_name" content="Li Xiangyi&#39;s Blog">
-<meta property="og:description" content="摘要：Connectivity map是药物基因组学研究领域的一个宝库，近些年来有许多计算生物学家开始对这个重要数据库进行挖掘，进行了包括但不限于组合药物研究、药物重定位研究等等，也有许多计算生物学家对connectivity map网站提供的联结“药物-基因-疾病”的算法提出了改进。他山之石可以攻玉，本文将尝试对connectivity map所使用的Kolmogorov–Smirnov tes">
+<meta property="og:description" content="摘要：Connectivity Map是药物基因组学研究领域的一个宝库，近些年来有许多计算生物学家开始对这个重要数据库进行挖掘，进行了包括但不限于组合药物研究、药物重定位研究等等，也有许多计算生物学家对connectivity map网站提供的联结“药物-基因-疾病”的算法提出了改进。他山之石可以攻玉，本文将尝试对connectivity map所使用的Kolmogorov–Smirnov tes">
 <meta property="og:locale" content="zh-hans">
 <meta property="og:image" content="http://px5k9sfp1.bkt.clouddn.com/image011.gif">
 <meta property="og:image" content="http://px5k9sfp1.bkt.clouddn.com/image013.gif">
 <meta property="og:image" content="http://px5k9sfp1.bkt.clouddn.com/1362527-20180331215135026-1073998294.png">
-<meta property="og:updated_time" content="2019-09-13T01:29:01.589Z">
+<meta property="og:updated_time" content="2019-09-14T09:31:34.923Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="药物基因组学数据库 Connectivity Map 算法浅析">
-<meta name="twitter:description" content="摘要：Connectivity map是药物基因组学研究领域的一个宝库，近些年来有许多计算生物学家开始对这个重要数据库进行挖掘，进行了包括但不限于组合药物研究、药物重定位研究等等，也有许多计算生物学家对connectivity map网站提供的联结“药物-基因-疾病”的算法提出了改进。他山之石可以攻玉，本文将尝试对connectivity map所使用的Kolmogorov–Smirnov tes">
+<meta name="twitter:description" content="摘要：Connectivity Map是药物基因组学研究领域的一个宝库，近些年来有许多计算生物学家开始对这个重要数据库进行挖掘，进行了包括但不限于组合药物研究、药物重定位研究等等，也有许多计算生物学家对connectivity map网站提供的联结“药物-基因-疾病”的算法提出了改进。他山之石可以攻玉，本文将尝试对connectivity map所使用的Kolmogorov–Smirnov tes">
 <meta name="twitter:image" content="http://px5k9sfp1.bkt.clouddn.com/image011.gif">
 
 
@@ -448,7 +448,7 @@
       
 
       
-        <p>摘要：Connectivity map 是药物基因组学研究领域的一个宝库，近些年来有许多计算生物学家开始对这个重要数据库进行挖掘，进行了包括但不限于组合药物研究、药物重定位研究等等，也有许多计算生物学家对 connectivity map 网站提供的联结“药物 - 基因 - 疾病”的算法提出了改进。他山之石可以攻玉，本文将尝试对 connectivity map 所使用的 Kolmogorov–Smirnov test 进行初步的解读。</p>
+        <p>摘要：Connectivity Map 是药物基因组学研究领域的一个宝库，近些年来有许多计算生物学家开始对这个重要数据库进行挖掘，进行了包括但不限于组合药物研究、药物重定位研究等等，也有许多计算生物学家对 connectivity map 网站提供的联结“药物 - 基因 - 疾病”的算法提出了改进。他山之石可以攻玉，本文将尝试对 connectivity map 所使用的 Kolmogorov–Smirnov test 进行初步的解读。</p>
 <a id="more"></a>
 <h3 id="拟合优度检验"><a href="# 拟合优度检验" class="headerlink" title="拟合优度检验"></a>拟合优度检验 </h3><p> 统计学学习中我们经常会遇到需要判断两组观测数据是否具有一致性的问题，解决办法之一就是拟合优度检验（Goodness of fit test）。拟合优度检验是基于卡方统计量进行统计的一种显著性检验，除了可以用来判断两组数据是否具有一致性外，也可以用来判断观测数据是否符合某种统计学分布。常见的拟合优度检验方法有：Neyman-Pearson χ2 拟合优度检验、Kolmogorov-Smirnov 检验等等。</p>
 <h3 id="经验分布函数"><a href="# 经验分布函数" class="headerlink" title="经验分布函数"></a>经验分布函数 </h3><p> 设 x1,x2,…,xn 是总体 X 的一组容量为 n 的样本测量值，将它们按照从小到大的顺序重新排列为 x1∗,x2∗,⋯,xn∗，对于任意实数 x，定义函数 </p>
@@ -577,8 +577,8 @@ k/n,\quad x^*_{k}\leq x<x^*_{k+1}, \quad k=1,2,\cdots,n-1\\
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/09/14/药物基因组学数据库Connectivity map网页分析工具的使用方法/" rel="prev" title="药物基因组学数据库 Connectivity map 网页分析工具的使用方法简介">
-                药物基因组学数据库 Connectivity map 网页分析工具的使用方法简介 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/09/14/药物基因组学数据库Connectivity map网页分析工具的使用方法/" rel="prev" title="药物基因组学数据库 Connectivity Map 网页分析工具的使用方法简介">
+                药物基因组学数据库 Connectivity Map 网页分析工具的使用方法简介 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
