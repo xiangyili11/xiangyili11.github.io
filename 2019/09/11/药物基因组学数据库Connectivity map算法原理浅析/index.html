@@ -94,7 +94,7 @@
 
 
 
-  <meta name="keywords" content="Connectivity Map,算法,药物基因组学,拟合优度检验,">
+  <meta name="keywords" content="算法,Connectivity Map,药物基因组学,拟合优度检验,">
 
 
 
@@ -106,21 +106,21 @@
 
 
 <meta name="description" content="摘要：Connectivity Map是药物基因组学研究领域的一个宝库，近些年来有许多计算生物学家开始对这个重要数据库进行挖掘，进行了包括但不限于组合药物研究、药物重定位研究等等，也有许多计算生物学家对connectivity map网站提供的联结“药物-基因-疾病”的算法提出了改进。他山之石可以攻玉，本文将尝试对connectivity map所使用的Kolmogorov–Smirnov tes">
-<meta name="keywords" content="Connectivity Map,算法,药物基因组学,拟合优度检验">
+<meta name="keywords" content="算法,Connectivity Map,药物基因组学,拟合优度检验">
 <meta property="og:type" content="article">
 <meta property="og:title" content="药物基因组学数据库 Connectivity Map 算法浅析">
 <meta property="og:url" content="https://eatdrinkbreathe.top/2019/09/11/药物基因组学数据库Connectivity map算法原理浅析/index.html">
 <meta property="og:site_name" content="Li Xiangyi&#39;s Blog">
 <meta property="og:description" content="摘要：Connectivity Map是药物基因组学研究领域的一个宝库，近些年来有许多计算生物学家开始对这个重要数据库进行挖掘，进行了包括但不限于组合药物研究、药物重定位研究等等，也有许多计算生物学家对connectivity map网站提供的联结“药物-基因-疾病”的算法提出了改进。他山之石可以攻玉，本文将尝试对connectivity map所使用的Kolmogorov–Smirnov tes">
 <meta property="og:locale" content="zh-hans">
-<meta property="og:image" content="http://px5k9sfp1.bkt.clouddn.com/image011.gif">
-<meta property="og:image" content="http://px5k9sfp1.bkt.clouddn.com/image013.gif">
-<meta property="og:image" content="http://px5k9sfp1.bkt.clouddn.com/1362527-20180331215135026-1073998294.png">
-<meta property="og:updated_time" content="2019-09-14T09:31:34.923Z">
+<meta property="og:image" content="https://eatdrinkbreathe.top/2019/09/11/药物基因组学数据库Connectivity%20map算法原理浅析/Cmap_algrith/image011.gif">
+<meta property="og:image" content="https://eatdrinkbreathe.top/2019/09/11/药物基因组学数据库Connectivity%20map算法原理浅析/Cmap_algrith/image013.gif">
+<meta property="og:image" content="https://eatdrinkbreathe.top/2019/09/11/药物基因组学数据库Connectivity%20map算法原理浅析/Cmap_algrith/1362527-20180331215135026-1073998294.png">
+<meta property="og:updated_time" content="2019-09-25T12:32:04.028Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="药物基因组学数据库 Connectivity Map 算法浅析">
 <meta name="twitter:description" content="摘要：Connectivity Map是药物基因组学研究领域的一个宝库，近些年来有许多计算生物学家开始对这个重要数据库进行挖掘，进行了包括但不限于组合药物研究、药物重定位研究等等，也有许多计算生物学家对connectivity map网站提供的联结“药物-基因-疾病”的算法提出了改进。他山之石可以攻玉，本文将尝试对connectivity map所使用的Kolmogorov–Smirnov tes">
-<meta name="twitter:image" content="http://px5k9sfp1.bkt.clouddn.com/image011.gif">
+<meta name="twitter:image" content="https://eatdrinkbreathe.top/2019/09/11/药物基因组学数据库Connectivity%20map算法原理浅析/Cmap_algrith/image011.gif">
 
 
 
@@ -484,15 +484,15 @@ k/n,\quad x^*_{k}\leq x<x^*_{k+1}, \quad k=1,2,\cdots,n-1\\
 
 
 <p>(5) 所以 CMap 算法的 KS 统计量计算公式为：</p>
-<p><img src="http://px5k9sfp1.bkt.clouddn.com/image011.gif" alt></p>
-<p><img src="http://px5k9sfp1.bkt.clouddn.com/image013.gif" alt></p>
+<p><img src="Cmap_algrith/image011.gif" alt></p>
+<p><img src="Cmap_algrith/image013.gif" alt></p>
 <p>其中 if  a &gt; b，KSTop/Bottom = a<br>　　 else       KSTop/Bottom = -b；<br>　　 if  KSTop * KSBottom &lt; 0<br>　　 score = KSTop – KSBottom<br>　　 else  score = 0</p>
 <p>对于该算法的一些理解：<br>（1）由于 KS 检验的统计量就是两个经验分布的最大距离（差值），那么计算 a 了之后为什么还要计算 b？我们可以看到 b 几乎等于 -a，仅仅加上了一个 1/t，当 t 很大时 1/t 可以忽略不计。这是因为 a 计算的时候包含正负符号，并不是真正意义上的距离（绝对值）。例如假设 a=max{-3,-2,-1,0,1,2}, 那么 a=2，我们知道 2 并不是最大距离，因为还有一个 -3, 因此为了得到真正意义上的最大距离，需要计算 b。</p>
 <p>（2） 为什么 a &gt;  b 则 KS=a;b&gt;a 则 ks=-b 呢？为什么要加上一个负号？是因为这种方法可以区分以下两种情况：<br>①疾病上调基因列表于药物上调基因列表一致（a1&gt;b1，ksup=a1，以及疾病下调基因列表于药物下调基因列表一致 (b2&gt;a2，ksdown=b2)；<br>②疾病上调基因列表于药物下调基因列表一致(a3&lt; b3, ksdown=b3)，以及疾病下调基因列表于药物上调基因列表一致（a4&gt;b4，ksup=a4)；<br> 若 a &gt;b 则 KS=a;b&gt;a 则 ks=b，不加负号，则①情况 score = KSTop – KSBottom=a1-b2；②score = KSTop – KSBottom=b3-a4。在此 (a1-b2) 正负号未知，（b3-a4)正负号也未知，也就无法区分①、②两种情况。如若将 a &gt;b 则 KS=a;b&gt;a 则 ks=-b，则在此 (a1+b2) 始终为正，（-b3-a4)始终为负，也就区分①、②两种情况。如此，本人佩服算法研究人员的缜密与创造性！</p>
 <p>(3) 为什么计算 b 的时候是 (j-1) 而不是 j？<a href="https://www.cnblogs.com/datamining-bio/p/8684420.html" target="_blank" rel="noopener">dedication</a>博客给出了比较合理的解答：</p>
 <blockquote>
 <blockquote>
-<p>我们再来看看计算 b 的公式，它将 i 减了 1，即将集合 B 中的基因位置向前推了一位，这是为什么呢？我们看下图 8 的情况。<br><img src="http://px5k9sfp1.bkt.clouddn.com/1362527-20180331215135026-1073998294.png" alt><br>当基因 Q 刚好在疾病中位于第 N 个，在药物数据中位于第 M 个，也就是说，该基因在疾病状态下被抑制，表达量非常少，而在药物作用下产生促进表达作用，表达量增加很多，很明显，该药物对该疾病的治疗效果应该很好，称为该疾病的特效药的可能性也很高，如果我们在计算 b 的时候，不减 1，那么 b=0，后面的异号条件也不满足，那么我们就漏掉了很好的这种情况，为了避免，就将集合 B 的基因位置向前推一个。</p>
+<p>我们再来看看计算 b 的公式，它将 i 减了 1，即将集合 B 中的基因位置向前推了一位，这是为什么呢？我们看下图 8 的情况。<br><img src="Cmap_algrith/1362527-20180331215135026-1073998294.png" alt><br>当基因 Q 刚好在疾病中位于第 N 个，在药物数据中位于第 M 个，也就是说，该基因在疾病状态下被抑制，表达量非常少，而在药物作用下产生促进表达作用，表达量增加很多，很明显，该药物对该疾病的治疗效果应该很好，称为该疾病的特效药的可能性也很高，如果我们在计算 b 的时候，不减 1，那么 b=0，后面的异号条件也不满足，那么我们就漏掉了很好的这种情况，为了避免，就将集合 B 的基因位置向前推一个。</p>
 </blockquote>
 </blockquote>
 <h3 id="参考资料"><a href="# 参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><p><a href="https://www.cnblogs.com/datamining-bio/p/8684420.html" target="_blank" rel="noopener">KS 检验统计量的扩展应用（CMap）</a></p>
@@ -533,9 +533,9 @@ k/n,\quad x^*_{k}\leq x<x^*_{k+1}, \quad k=1,2,\cdots,n-1\\
       
         <div class="post-tags">
           
-            <a href="/tags/Connectivity-Map/" rel="tag"># Connectivity Map</a>
-          
             <a href="/tags/Algorithms/" rel="tag"># 算法</a>
+          
+            <a href="/tags/Connectivity-Map/" rel="tag"># Connectivity Map</a>
           
             <a href="/tags/药物基因组学/" rel="tag"># 药物基因组学</a>
           

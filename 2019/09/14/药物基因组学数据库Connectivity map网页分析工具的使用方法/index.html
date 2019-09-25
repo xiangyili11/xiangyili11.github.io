@@ -94,7 +94,7 @@
 
 
 
-  <meta name="keywords" content="Connectivity Map,算法,数据库,药物基因组学,">
+  <meta name="keywords" content="算法,Connectivity Map,数据库,药物基因组学,">
 
 
 
@@ -106,7 +106,7 @@
 
 
 <meta name="description" content="摘要：Connectivity Map(CMap)是2006年推出的数据库，之后经过一次更新，使得数据库包含了1309个小分子药物处理五类人类肿瘤细胞系后的约7000个基因表达谱数据。数据库历经十几年，仍然是研究药物基因组学的科研人员不可或缺的宝贵资源。CMap数据库提供了的网页分析工具，本文将简要介绍一下其使用方法。">
-<meta name="keywords" content="Connectivity Map,算法,数据库,药物基因组学">
+<meta name="keywords" content="算法,Connectivity Map,数据库,药物基因组学">
 <meta property="og:type" content="article">
 <meta property="og:title" content="药物基因组学数据库 Connectivity Map 使用方法简介（二）">
 <meta property="og:url" content="https://eatdrinkbreathe.top/2019/09/14/药物基因组学数据库Connectivity map网页分析工具的使用方法/index.html">
@@ -114,13 +114,13 @@
 <meta property="og:description" content="摘要：Connectivity Map(CMap)是2006年推出的数据库，之后经过一次更新，使得数据库包含了1309个小分子药物处理五类人类肿瘤细胞系后的约7000个基因表达谱数据。数据库历经十几年，仍然是研究药物基因组学的科研人员不可或缺的宝贵资源。CMap数据库提供了的网页分析工具，本文将简要介绍一下其使用方法。">
 <meta property="og:locale" content="zh-hans">
 <meta property="og:image" content="http://px5k9sfp1.bkt.clouddn.com/grp%E6%96%87%E4%BB%B6.PNG">
-<meta property="og:image" content="http://px5k9sfp1.bkt.clouddn.com/query_page.PNG">
-<meta property="og:image" content="http://px5k9sfp1.bkt.clouddn.com/quick_query.PNG">
-<meta property="og:image" content="http://px5k9sfp1.bkt.clouddn.com/load_signature.PNG">
-<meta property="og:image" content="http://px5k9sfp1.bkt.clouddn.com/signature_query.PNG">
-<meta property="og:image" content="http://px5k9sfp1.bkt.clouddn.com/results.PNG">
-<meta property="og:image" content="http://px5k9sfp1.bkt.clouddn.com/enrichment_result.PNG">
-<meta property="og:updated_time" content="2019-09-22T02:16:58.518Z">
+<meta property="og:image" content="https://eatdrinkbreathe.top/2019/09/14/药物基因组学数据库Connectivity%20map网页分析工具的使用方法/Cmap_tools/query_page.PNG">
+<meta property="og:image" content="https://eatdrinkbreathe.top/2019/09/14/药物基因组学数据库Connectivity%20map网页分析工具的使用方法/Cmap_tools/quick_query.PNG">
+<meta property="og:image" content="https://eatdrinkbreathe.top/2019/09/14/药物基因组学数据库Connectivity%20map网页分析工具的使用方法/Cmap_tools/load_signature.PNG">
+<meta property="og:image" content="https://eatdrinkbreathe.top/2019/09/14/药物基因组学数据库Connectivity%20map网页分析工具的使用方法/Cmap_tools/signature_query.PNG">
+<meta property="og:image" content="https://eatdrinkbreathe.top/2019/09/14/药物基因组学数据库Connectivity%20map网页分析工具的使用方法/Cmap_tools/results.PNG">
+<meta property="og:image" content="https://eatdrinkbreathe.top/2019/09/14/药物基因组学数据库Connectivity%20map网页分析工具的使用方法/Cmap_tools/enrichment_result.PNG">
+<meta property="og:updated_time" content="2019-09-25T12:29:52.762Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="药物基因组学数据库 Connectivity Map 使用方法简介（二）">
 <meta name="twitter:description" content="摘要：Connectivity Map(CMap)是2006年推出的数据库，之后经过一次更新，使得数据库包含了1309个小分子药物处理五类人类肿瘤细胞系后的约7000个基因表达谱数据。数据库历经十几年，仍然是研究药物基因组学的科研人员不可或缺的宝贵资源。CMap数据库提供了的网页分析工具，本文将简要介绍一下其使用方法。">
@@ -457,15 +457,15 @@
 <p>2）根据研究目的，提供相应的上下调探针集列表。例如，如果研究某种疾病，那么就要提供疾病组 vs 正常组的上调和下调探针集列表；如果要研究药物的作用，那么就要提供处理组 vs 对照组的上调和下调探针集列表（注：网站限制上下调探针集总数在 1000 以内）。<br>3）将上下调基因列表文件转化为.grp 格式。就是将上下调基因列表文件后缀名改为.grp。如下图所示:</p>
 <p><img src="http://px5k9sfp1.bkt.clouddn.com/grp%E6%96%87%E4%BB%B6.PNG" alt></p>
 <h3 id="数据处理"><a href="# 数据处理" class="headerlink" title="数据处理"></a>数据处理 </h3><p> 数据输入接口有四种，即</p>
-<p><img src="http://px5k9sfp1.bkt.clouddn.com/query_page.PNG" alt></p>
-<p><img src="http://px5k9sfp1.bkt.clouddn.com/quick_query.PNG" alt><br>点击“浏览”，分别上传本地存放的上下调探针集列表文件。然后点击”execute query”执行分析，等待，点击“view results now”就可以看到分析结果。</p>
-<p><img src="http://px5k9sfp1.bkt.clouddn.com/load_signature.PNG" alt></p>
+<p><img src="Cmap_tools/query_page.PNG" alt></p>
+<p><img src="Cmap_tools/quick_query.PNG" alt><br>点击“浏览”，分别上传本地存放的上下调探针集列表文件。然后点击”execute query”执行分析，等待，点击“view results now”就可以看到分析结果。</p>
+<p><img src="Cmap_tools/load_signature.PNG" alt></p>
 <p>load signature 与 quick query 的区别就是：load signature 可以让用户对每一次的分析做个性化描述，这对同时执行多次不同分析的用户来说很有用，而 quick query 则简单粗暴，适合一次性分析，不提供数据描述和命名功能。</p>
-<p><img src="http://px5k9sfp1.bkt.clouddn.com/signature_query.PNG" alt></p>
+<p><img src="Cmap_tools/signature_query.PNG" alt></p>
 <p>用户想再重新分析一下以前上传的上下调探针集列表，可以使用 signature query。只要找到以前分析结果的名字即可直接用于新的分析。还有一种是选择数据库中自带的 instance 作为输入，研究该 instance 与 CMap 其他 instances 的联系，这种方法操作起来和上面差不多，在此不再赘述。</p>
 <h3 id="结果解释"><a href="# 结果解释" class="headerlink" title="结果解释"></a>结果解释 </h3><p> 用户提交数据进行分析之后会得到分析结果，结果展示了基于 CMap 的模式匹配算法，用户提供的表达谱与 CMap 各个药物处理产生的表达谱相似或者相异程度。结果有两种展现方式。如下图所示：  </p>
-<p><img src="http://px5k9sfp1.bkt.clouddn.com/results.PNG" alt><br>用户根据自己研究目的不同来选择不同的分析结果。一种是 detailed results(基于 connnectivity score 的展示方式)，该法是以单个 instance 为中心，也就是展示 CMap 数据库中每一个 instance 与用户提交探针集的关系（结果解释参见 <a href="http://eatdrinkbreathe.top/2019/09/01/ 药物基因组学数据库 Connectivity map 简介 /"> 药物基因组学数据库 Connectivity Map 使用方法简介（一）</a>）；另一种是 permuted results(基于 instance 集合的结果展示方式)，instance 集合的种类有三类，即同一种药物处理得到的 instance 集合（<strong>by name</strong>，不论什么浓度、处理什么细胞系、处理多长时间），同一药物处理同一细胞系的 instance 集合（<strong>by name and cell line</strong>，不论什么浓度、什么处理时长），同属于一个 ATC code 的药物处理得到的 instance 集合（<strong>by ATC code</strong>）。然后分别计算每个 instance 集合的 Enrichment score 和 p value，最终基于 p value 和 Enrichment score 对每个 instance 集合排序。结果如下图所示：</p>
-<p><img src="http://px5k9sfp1.bkt.clouddn.com/enrichment_result.PNG" alt><br>第一列 <strong>rank</strong> 是每个 instance 集合的排名（基于 p value 升序排序，基于 enrichment 的绝对值降序排序）；</p>
+<p><img src="Cmap_tools/results.PNG" alt><br>用户根据自己研究目的不同来选择不同的分析结果。一种是 detailed results(基于 connnectivity score 的展示方式)，该法是以单个 instance 为中心，也就是展示 CMap 数据库中每一个 instance 与用户提交探针集的关系（结果解释参见 <a href="http://eatdrinkbreathe.top/2019/09/01/ 药物基因组学数据库 Connectivity map 简介 /"> 药物基因组学数据库 Connectivity Map 使用方法简介（一）</a>）；另一种是 permuted results(基于 instance 集合的结果展示方式)，instance 集合的种类有三类，即同一种药物处理得到的 instance 集合（<strong>by name</strong>，不论什么浓度、处理什么细胞系、处理多长时间），同一药物处理同一细胞系的 instance 集合（<strong>by name and cell line</strong>，不论什么浓度、什么处理时长），同属于一个 ATC code 的药物处理得到的 instance 集合（<strong>by ATC code</strong>）。然后分别计算每个 instance 集合的 Enrichment score 和 p value，最终基于 p value 和 Enrichment score 对每个 instance 集合排序。结果如下图所示：</p>
+<p><img src="Cmap_tools/enrichment_result.PNG" alt><br>第一列 <strong>rank</strong> 是每个 instance 集合的排名（基于 p value 升序排序，基于 enrichment 的绝对值降序排序）；</p>
 <p>第二列是 instance 集合（by name，by name and cell line，by ATC code）的名称； </p>
 <p>第三列 <strong>mean</strong> 是每个 instance 集合对用户探针集的 connectivity score 的平均值；  </p>
 <p>第四列 <strong>n</strong> 是每个 instance 集合的大小；</p>
@@ -508,9 +508,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Connectivity-Map/" rel="tag"># Connectivity Map</a>
-          
             <a href="/tags/Algorithms/" rel="tag"># 算法</a>
+          
+            <a href="/tags/Connectivity-Map/" rel="tag"># Connectivity Map</a>
           
             <a href="/tags/数据库/" rel="tag"># 数据库</a>
           
