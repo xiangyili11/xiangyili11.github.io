@@ -114,7 +114,7 @@
 <meta property="og:description" content="网络的毗邻矩阵 &amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;网络主要由节点（node）和边（edge）组成，是一种研究节点与节点相互关系的重要工具，如描述蛋白质之间相互作用的蛋白质相互作用网络，描述基因之间共表达关系的基因共表达网络等等。">
 <meta property="og:locale" content="zh-hans">
 <meta property="og:image" content="https://eatdrinkbreathe.top/2019/06/04/生物网络-毗邻矩阵/networkConcepts1/connectivity.PNG">
-<meta property="og:updated_time" content="2019-09-25T12:25:28.848Z">
+<meta property="og:updated_time" content="2019-09-26T04:45:32.044Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="生物网络的概念（一）：毗邻矩阵（Adjacency Matrix）">
 <meta name="twitter:description" content="网络的毗邻矩阵 &amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;网络主要由节点（node）和边（edge）组成，是一种研究节点与节点相互关系的重要工具，如描述蛋白质之间相互作用的蛋白质相互作用网络，描述基因之间共表达关系的基因共表达网络等等。">
@@ -462,7 +462,7 @@
 <center> $k_i = \sum_{j \neq i}A_{ij}$ </center> 
 
 <p>&ensp;&ensp;&ensp;&ensp; 在无加权网络中，节点 i 的总连接度 ki 就等于与节点 i 连接的所有点的总数目。<br>&ensp;&ensp;&ensp;&ensp; 在加权网络中，节点 i 的总连接度等于与节点 i 连接的各个点毗邻值（Aij)的总和。如下图所示：</p>
-<p><img src="networkConcepts1/connectivity.PNG" alt></p>
+<p><img src="networkConcepts1/connectivity.PNG" alt="avatar"></p>
 <hr>
 <p><strong> 社交网络分析：感染网络（Affection Network） </strong></p>
 <p>&ensp;&ensp;&ensp;&ensp; 马克思曾给人下了个定义：人是各种社会关系的总和。可以通过人际关系网络来理解理解网络的基本特性。把人作为网络（人际关系网）的节点，两个人（节点）的亲近程度作为他们之间的感染力（毗邻值）。我们可以这样假设：两个人强烈地喜欢欣赏对方，那么他们之间的感染力就非常强（毗邻值 Aij 就等于 1）；若他们彼此无感、不感染（但也不排斥，Aij 就等于 0.5）；若他们彼此极度厌恶，那么没有一点感染力（Aij 就等于 0）。最终某个人与所有人的连接度之和（标化花后）可以作为他的受欢迎程度（connectivity)，这个 connectivity 值越大说明这个人越受人爱戴。</p>
