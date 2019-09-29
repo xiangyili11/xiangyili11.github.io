@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>pandas dataframe��������</title>
+      <link href="/2019/09/29/pandas-change-columns/"/>
+      <url>/2019/09/29/pandas-change-columns/</url>
+      
+        <content type="html"><![CDATA[<p>ժҪ����������Ϣѧ���ݷ����У�������Ҫ���϶���ĵ������ݣ����о�����������Ҫ����ĳ���ļ��е���Ϣ��������һ������ļ����������⣬���ĸ�����һ�ָ��ķ�����</p><p>�����ļ�A������Ϣ���£�</p><div class="table-container"><table><thead><tr><th>chipID</th><th>drugID</th></tr></thead><tbody><tr><td>CVD001_HUH7_24H:BRD-A19037878:10</td><td>trichostatin-a</td></tr><tr><td>CVD001_HUH7_24H:BRD-A19500257:10</td><td>geldanamycin</td></tr><tr><td>CVD001_HUH7_24H:BRD-A29349577-001-04-0:2.5</td><td>dropropizine</td></tr><tr><td>CVD001_HUH7_24H:BRD-A36411721-001-01-0:14.3</td><td>BRD-A36411721</td></tr><tr><td>CVD001_HUH7_24H:BRD-A37828317-001-03-0:2.5</td><td>anthothecol</td></tr><tr><td>CVD001_HUH7_24H:BRD-A41649729-001-01-0:10</td><td>BRD-A41649729</td></tr><tr><td>…</td><td>…</td></tr></tbody></table></div><p>�ļ�B�ı�ͷ��chip ID�������Ҫ��B�ı�ͷ��ΪchipID��Ӧ��drugID,��ô���������ǣ�</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">import pandas as pd</span><br><span class="line">A_content = pd.read_table(A_filename,sep=&quot;\t&quot;)</span><br><span class="line">#����chipIDΪ����drugIDΪֵ���ֵ�</span><br><span class="line">new_dict = dict(zip(A_content.chipID,A_content.drugID))</span><br><span class="line">#��ȡB�ļ�</span><br><span class="line">B_content = pd.read_table(B_filename,sep=&quot;\t&quot;)</span><br><span class="line">#����B������</span><br><span class="line">B_content.rename(columns=dd_dict,inplace=True)</span><br></pre></td></tr></table></figure><h2 id="END"><a href="#END" class="headerlink" title="END"></a><center> END </center></h2>]]></content>
+      
+      
+      <categories>
+          
+          <category> �������� </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> python </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>生物网络的概念（二）：无标度网络（scale-free network)</title>
       <link href="/2019/09/22/labelFreeNetwork/"/>
       <url>/2019/09/22/labelFreeNetwork/</url>
@@ -20,9 +45,9 @@
       
         <tags>
             
-            <tag> WGCNA </tag>
-            
             <tag> 生物网络的概念 </tag>
+            
+            <tag> WGCNA </tag>
             
             <tag> 无标度网络 </tag>
             
@@ -163,9 +188,9 @@
       
         <tags>
             
-            <tag> 生物网络的概念 </tag>
-            
             <tag> 算法 </tag>
+            
+            <tag> 生物网络的概念 </tag>
             
         </tags>
       
