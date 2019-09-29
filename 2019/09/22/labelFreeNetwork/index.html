@@ -94,7 +94,7 @@
 
 
 
-  <meta name="keywords" content="译文,">
+  <meta name="keywords" content="生物网络的概念,WGCNA,无标度网络,">
 
 
 
@@ -105,18 +105,21 @@
 
 
 
-<meta name="description" content="摘要：时常在生物学招聘广告上看到招聘生物信息分析员、生物信息分析工程师、生物信息科学家甚至计算生物学家。所需要的学历、技能、经验依次成倍增加。生物码农是对会编程、跑流程，在公司里做着重复机械数据分析和文档写作工作的生信人的戏称。而计算生物学家则往往是在高校和研究所中独当一面的PI。本文是一篇译文，两名计算生物学家给出了一些计算生物学领域的注意事项和建议。">
-<meta name="keywords" content="译文">
+<meta name="description" content="摘要：无标度网络（scale-free network）是一种重要的网络类型，因其能够很好地体现许多社会学、互联网以及生物学中的相互作用关系而受到了广泛的关注。本文将对无标度网络以及相关的概念进行初步的介绍。">
+<meta name="keywords" content="生物网络的概念,WGCNA,无标度网络">
 <meta property="og:type" content="article">
-<meta property="og:title" content="生物码农 VS 计算生物学家">
-<meta property="og:url" content="https://eatdrinkbreathe.top/2019/08/25/计算生物学家/index.html">
+<meta property="og:title" content="生物网络的概念（二）：无标度网络（scale-free network)">
+<meta property="og:url" content="https://eatdrinkbreathe.top/2019/09/22/labelFreeNetwork/index.html">
 <meta property="og:site_name" content="Li Xiangyi&#39;s Blog">
-<meta property="og:description" content="摘要：时常在生物学招聘广告上看到招聘生物信息分析员、生物信息分析工程师、生物信息科学家甚至计算生物学家。所需要的学历、技能、经验依次成倍增加。生物码农是对会编程、跑流程，在公司里做着重复机械数据分析和文档写作工作的生信人的戏称。而计算生物学家则往往是在高校和研究所中独当一面的PI。本文是一篇译文，两名计算生物学家给出了一些计算生物学领域的注意事项和建议。">
+<meta property="og:description" content="摘要：无标度网络（scale-free network）是一种重要的网络类型，因其能够很好地体现许多社会学、互联网以及生物学中的相互作用关系而受到了广泛的关注。本文将对无标度网络以及相关的概念进行初步的介绍。">
 <meta property="og:locale" content="zh-hans">
-<meta property="og:updated_time" content="2019-09-01T13:02:46.295Z">
+<meta property="og:image" content="http://px5k9sfp1.bkt.clouddn.com/%E6%97%A0%E6%A0%87%E5%BA%A6%E7%BD%91%E8%B7%AF.PNG">
+<meta property="og:image" content="http://px5k9sfp1.bkt.clouddn.com/Cortex_expression_data_in_GTEx.txtdrop_median_0..png">
+<meta property="og:updated_time" content="2019-09-22T02:00:47.298Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="生物码农 VS 计算生物学家">
-<meta name="twitter:description" content="摘要：时常在生物学招聘广告上看到招聘生物信息分析员、生物信息分析工程师、生物信息科学家甚至计算生物学家。所需要的学历、技能、经验依次成倍增加。生物码农是对会编程、跑流程，在公司里做着重复机械数据分析和文档写作工作的生信人的戏称。而计算生物学家则往往是在高校和研究所中独当一面的PI。本文是一篇译文，两名计算生物学家给出了一些计算生物学领域的注意事项和建议。">
+<meta name="twitter:title" content="生物网络的概念（二）：无标度网络（scale-free network)">
+<meta name="twitter:description" content="摘要：无标度网络（scale-free network）是一种重要的网络类型，因其能够很好地体现许多社会学、互联网以及生物学中的相互作用关系而受到了广泛的关注。本文将对无标度网络以及相关的概念进行初步的介绍。">
+<meta name="twitter:image" content="http://px5k9sfp1.bkt.clouddn.com/%E6%97%A0%E6%A0%87%E5%BA%A6%E7%BD%91%E8%B7%AF.PNG">
 
 
 
@@ -146,13 +149,13 @@
 
 
 
-  <link rel="canonical" href="https://eatdrinkbreathe.top/2019/08/25/计算生物学家/">
+  <link rel="canonical" href="https://eatdrinkbreathe.top/2019/09/22/labelFreeNetwork/">
 
 
 
 
 
-  <title>生物码农 VS 计算生物学家 | Li Xiangyi's Blog</title>
+  <title>生物网络的概念（二）：无标度网络（scale-free network) | Li Xiangyi's Blog</title>
   
 
 
@@ -321,7 +324,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://eatdrinkbreathe.top/2019/08/25/计算生物学家/">
+    <link itemprop="mainEntityOfPage" href="https://eatdrinkbreathe.top/2019/09/22/labelFreeNetwork/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="lixiangyi">
@@ -338,7 +341,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">生物码农 VS 计算生物学家</h1>
+          <h1 class="post-title" itemprop="name headline">生物网络的概念（二）：无标度网络（scale-free network)</h1>
         
 
         <div class="post-meta">
@@ -350,8 +353,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-25T16:42:13+08:00">
-                2019-08-25
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-09-22T09:45:29+08:00">
+                2019-09-22
               </time>
             
 
@@ -391,8 +394,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/08/25/计算生物学家/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/08/25/计算生物学家/" itemprop="commentCount"></span>
+                <a href="/2019/09/22/labelFreeNetwork/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/09/22/labelFreeNetwork/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -419,7 +422,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  3.2k字
+                  1.7k字
                 </span>
               
 
@@ -444,22 +447,28 @@
       
 
       
-        <p>摘要：时常在生物学招聘广告上看到招聘生物信息分析员、生物信息分析工程师、生物信息科学家甚至计算生物学家。所需要的学历、技能、经验依次成倍增加。生物码农是对会编程、跑流程，在公司里做着重复机械数据分析和文档写作工作的生信人的戏称。而计算生物学家则往往是在高校和研究所中独当一面的 PI。本文是一篇译文，两名计算生物学家给出了一些计算生物学领域的注意事项和建议。<br><a id="more"></a></p>
-<h2 id="《所以，你想成为一名计算生物学家？》"><a href="#《所以，你想成为一名计算生物学家？》" class="headerlink" title="《所以，你想成为一名计算生物学家？》"></a>《所以，你想成为一名计算生物学家？》</h2><h3 id="原文信息：Loman-Nick-and-Mick-Watson-“So-you-want-to-be-a-computational-biologist-”-Nature-biotechnology-31-11-2013-996"><a href="# 原文信息：Loman-Nick-and-Mick-Watson-“So-you-want-to-be-a-computational-biologist-”-Nature-biotechnology-31-11-2013-996" class="headerlink" title="原文信息：Loman, Nick, and Mick Watson. “So you want to be a computational biologist?.” Nature biotechnology 31.11 (2013): 996."></a>原文信息：Loman, Nick, and Mick Watson. “So you want to be a computational biologist?.” Nature biotechnology 31.11 (2013): 996.</h3><p>计算生物学家往往身兼多个角色，包括数据分析工程师、数据管理员、数据库开发工程师、统计分析师、数学建模工程师、生物信息学工程师、软件开发工程师、存在论支持者等等。显然计算机是现代生物学研究的重要组成部分，生物学家们需要掌握计算生物学所要求的新技能和新技术。无论你是生命科学领域的一名研究生、一位教授或者其他什么人，如果你发现计算分析对你的研究越来越重要，请遵循下面的建议，沿着这条成为一名计算生物学家的路走下去!</p>
-<h3 id="明确你的目标并选择合适的研究方法"><a href="# 明确你的目标并选择合适的研究方法" class="headerlink" title="明确你的目标并选择合适的研究方法"></a>明确你的目标并选择合适的研究方法 </h3><p> 要想学好计算生物学，关键是选择和使用适当的软件。在您能够合理地解释软件的输出结果之前，您必须了解软件在做什么（内部工作原理是什么）。就像如果你对聚合酶链反应的方法和原理没有基本的了解，你就不会进入实验室进行聚合酶链反应实验。对于计算生物学来说，为什么也要这样做呢? 因为理解软件的底层工作原理和算法有助于合理地解释输出结果。这并不意味着您需要通读每一行源代码，但是您应该对软件的基本原理和算法有概念上的了解。</p>
-<p>软件工具通常是特定算法的实现，该算法可能非常适合特定类型的数据，例如在从头组装序列（de novo assembly)中，Overlap-Layout-Consensus 类软件适用于对长序列的组装，而 de Bruijn graphs 类软件则适合短序列的组装。选择采用最合适算法的软件将会为您节省大量时间。</p>
-<h3 id="为自己和他人的脚本设置正负对照"><a href="# 为自己和他人的脚本设置正负对照" class="headerlink" title="为自己和他人的脚本设置正负对照"></a>为自己和他人的脚本设置正负对照 </h3><p> 您如何知道您的脚本、软件或流程正在正确地工作? 计算机会经常会基于奇怪的输入数据输出分析结果，而且没有任何报错信息，但这并不意味着没有问题。基于已知输出结果的小数据集进行测试（预实验），检查软件或分析流程是否能够重现该结果。试着对你希望找到的每一种类型的答案都这样做。仔细检查每种测试的结果，看看这些结果是否有意义。如果没有必要的正负对照，湿实验科学家是不会想着进行实验的，而这些测试在计算生物学实验中也发挥着同等作用。</p>
-<h3 id="你是个科学家，不是程序员（码农）"><a href="# 你是个科学家，不是程序员（码农）" class="headerlink" title="你是个科学家，不是程序员（码农）"></a>你是个科学家，不是程序员（码农）</h3><p>要求太高反而难成功。你是一个科学家，科学研究工作完成的质量比你的源代码看起来有多漂亮更重要。如果输出结果是错误的，代码编写得再完美、文档再丰富、再优雅，那么它就是不如能输出正确结果的简单脚本有用。话虽如此，一旦您确定您的核心算法能够正常且正确地工作，就应该花点时间使它变得优雅些，并写出它的使用文档。尽可能多地运用你的生物学知识——这是你成为计算生物学家的根本。</p>
-<h3 id="使用版本控制软件"><a href="# 使用版本控制软件" class="headerlink" title="使用版本控制软件"></a>使用版本控制软件 </h3><p> 版本控制软件能够跟踪你对代码的更改，帮助您维护多个版本的代码并与其他人协作。使用标准工具，如 Git 或 Subversion，您就可以轻松地发布代码。善待未来（那个阅读代码或者修改代码）的自己。解释您写代码时所做的选择以及您为什么要做这些选择的 ReadMe 文件，将在几个月或几年之后您返回到某项目时成为一件好事。编写代码和脚本的说明文档，以便帮自己和他人理解它们的作用。当发布您的研究成果时，请尝试同时发布用于生成研究结果的脚本和方法，以便其他人可以复制、重现它们。还可以考虑在你进行数据分析的时候，用一个数字化实验室记录本来记录你的分析结果。云存储数据库 (如 Github) 是理想的选择，它还可以帮助您维护存储库的副本并以此作为分析结果的离线备份。</p>
-<h3 id="问问自己是否需要流程化"><a href="# 问问自己是否需要流程化" class="headerlink" title="问问自己是否需要流程化"></a>问问自己是否需要流程化 </h3><p> 流程化是指一系列按照预设的计划依次运行的脚本或软件工具。流程化非常适合以重复的方式运行完全相同的一组步骤以及与他人共享协议。但流程化可能会迫使您采用一种僵化的思维方式而降低创新性。警告: 不要过早地把自己的工作流程化。在将一个方法转换为一个流程之前，先让它正常工作。即便如此，它是否需要成为一个流程? 这样能节省时间吗? 你的流程真的对别人有用吗? 如果这些步骤只由您来操作，而一个简单的脚本可能就足够，那么任何尝试流程化的操作将是浪费时间。类似地，如果这些步骤只运行一次，那么就只运行一次而不必流程化，记录下您曾经运行过这些步骤，然后继续下去。</p>
-<h3 id="奥巴马式思维模式"><a href="# 奥巴马式思维模式" class="headerlink" title="奥巴马式思维模式"></a>奥巴马式思维模式 </h3><p> 是的, 你可以的!（YES，YOU CAN！）作为一个计算生物学家，你需要有创造性，从改进现有的计算方法到达开发全新的方法的境界。也要敢于冒险，做好失败的准备，更要坚持下去。通过使用谷歌，请教领域内的专家，自学如何解决特定的问题，你也可以取得惊人的成就。参加培训课程也是有用的，但这些只是成为计算生物学家的学习的开始，而不是结束。之后继续坚持自学。</p>
-<h3 id="科研需要质疑精神，尽信文献不如无文献"><a href="# 科研需要质疑精神，尽信文献不如无文献" class="headerlink" title="科研需要质疑精神，尽信文献不如无文献"></a>科研需要质疑精神，尽信文献不如无文献 </h3><p> 统计学训练中进行往往包含多个实验。首先，创建一个由随机数组成的大矩阵，并将列指定为实验组或对照组。然后对每一行进行统计测试，以分析实验组数据和对照组数据之间是否存在显著的差异。您将毫不惊讶地发现，得到的结果中有几百行的 P 值具有统计显著性。生物数据集（比如基因组学实验产生的数据集）庞大而充满噪音。您的数据分析将产生假阳性和假阴性结果，而且在实验中或分析中的数据也可能会引入系统性偏差。</p>
-<p>即使在受过统计学理论训练的生物学家中，也有一种倾向，即当特定的软件或流程产生有趣的结果时，他们会把谨慎和怀疑精神抛诸脑后。而真正需要做的是：对结果持怀疑态度，并进行进一步的测试，以确定“有趣的”结果是否可以用实验误差或偏差来解释。如果多种方法结果一致，那么你就能提升对这些答案的信心。但对于许多实验的结果，需要进一步的实验室验证和分析工作。在解释计算生物学的分析结果时，生物学知识是至关重要的。如上所述，设置正负对照或测试只是计算生物学的一部分。这些测试旨在确保您的软件或分析流程按照您的预期在工作，即使如此这并不一定意味着所得到的答案是正确的。</p>
-<h3 id="适合进行计算生物学分析的工具"><a href="# 适合进行计算生物学分析的工具" class="headerlink" title="适合进行计算生物学分析的工具"></a>适合进行计算生物学分析的工具 </h3><p> 您要熟练使用 UNIX/Linux 命令行进行工作。命令行的功能非常强大，它允许您更好地控制软件去做什么，并允许您同时运行和控制多个作业。大多数生物信息学软件的设计就是基于命令行运行的。您还需要了解计算集群以及如何并行运行数百个作业。你需要能够编写代码，但是编程语言种类的选择并不像计算机科学家所认为的那么重要。每种编程语言都有优缺点，你可能不得不使用多种语言来完成工作。</p>
-<p>选择一种更流行的语言将使您受益，因为存在着更大的工具集库，例如来自 Open Bioinformatics Foundation 的 Bio* 项目。Microsoft Excel 是一个电子表格程序，除非非常小心地使用，否则不适合生物数据的存储和分析。建议将实验数据存储在结构化文本文件或 SQL 数据库中。采用基本的数据库操作方法，如数据标准化，可以使出错的机会更少。建议所有数据都定期备份。</p>
-<h3 id="像侦探一样思考"><a href="# 像侦探一样思考" class="headerlink" title="像侦探一样思考"></a>像侦探一样思考 </h3><p> 作为一名计算生物学家，您将花费大量时间分析和解释数据。数据在告诉你一些事情。它们蕴含了一个故事，你的工作就是找出这个故事是什么。除非你非常幸运，大多数时候它不会显而易见。查明真相并不容易。你必须考虑实验是如何进行的、数据分析是如何进行的以及结果告诉你什么。你需要自信地忽略或控制数据中的错误和系统性偏差。要做到这一点，你可能需要与参与这项工作的其他科学家交谈，或者整合和分析额外的数据。您可能需要设计后续实验来测试您提出的任何实验假设。记住，真实的故事可能根本不出自您的数据中! 比如，如果你感兴趣的生物系统依赖于蛋白质的磷酸化，那么你可能不会在 RNA-seq 数据中看到这种效果。计算生物学家基本上是个侦探，折腾数据并发现真相。</p>
-<h3 id="站在巨人的肩膀上"><a href="# 站在巨人的肩膀上" class="headerlink" title="站在巨人的肩膀上"></a>站在巨人的肩膀上 </h3><p> 你在做的工作很可能已经有人已经在研究过了，找到他们! 无论你的研究问题多么棘手，研究方法多么先进，很有可能已经有人尝试过解决它了。讨论软件相关问题的两个优秀资源是 <a href="http://www.biostars.org/" target="_blank" rel="noopener">BioStars</a> 和<a href="http://seqanswes.com/" target="_blank" rel="noopener">SEQanswers</a>。Twitter 是另一个你可以找到建议、资源和论文链接的地方。也可以与你所在系或研究所的其他计算生物学家联系。在您的领域也可能会有一个本地的计算生物学会议或兴趣小组，所以找到它并加入。如果没有，为什么不像尼克（本文作者之一）那样自己组建一个呢? 总之，如果您想进行计算生物学分析，可以通过在线和本地研究人员获得大量支持。有足够的勇气去尝试并从这些资源中学习是最好的起点。在你的电脑上安装 Linux 操作系统并开始学习一些在线的学习材料。你会惊讶于你能很快上手做出一些什么东西，最终这将成为你一个非常有益的经验!</p>
-<h3 id="END"><a href="#END" class="headerlink" title="END"></a><center> END </center></h3>
+        <p>摘要：无标度网络（scale-free network）是一种重要的网络类型，因其能够很好地体现许多社会学、互联网以及生物学中的相互作用关系而受到了广泛的关注。本文将对无标度网络以及相关的概念进行初步的介绍。<br><a id="more"></a></p>
+<h3 id="无标度网络的概念及其意义"><a href="# 无标度网络的概念及其意义" class="headerlink" title="无标度网络的概念及其意义"></a>无标度网络的概念及其意义 </h3><p> 无标度网络是一种所有节点（node）的度（degree）服从幂分布 (Power law distribution) 的网络 [1]。<br> 研究人员发现在很多网络中，少量的节点拥有整个网络的大部分连接度，而多数节点的连接度却非常小，这个现象符合幂分布的特点，并称这样的网络为无标度网络。如下图所示：</p>
+<p><img src="http://px5k9sfp1.bkt.clouddn.com/%E6%97%A0%E6%A0%87%E5%BA%A6%E7%BD%91%E8%B7%AF.PNG" alt></p>
+<p>要想理解什么是无标度网络（scale-free network)首先要了解什么是幂分布。幂分布的定义是当样本数据较多时，变量 x 的概率密度函数：f(x)~x^(-α-1)。</p>
+<p>不像正态分布那样个体的尺度在某个值附近变化很小，比如说人的身高、体重、智商，幂分布个体的尺度可以在很宽的范围内变化，这种波动往往可以跨越几个甚至几十个数量级。由此我们可以想到 20/80 法则、马太效应、“天之道，损有余而补不足；人之道则不然，损不足以奉有余”等等等等。幂分布充分地体现了重要的少数与琐碎的多数的关系，因此在社会学乃至生物学研究中都受到了广泛关注。</p>
+<h3 id="构建无标度网络的方法步骤以及代码实现"><a href="# 构建无标度网络的方法步骤以及代码实现" class="headerlink" title="构建无标度网络的方法步骤以及代码实现"></a>构建无标度网络的方法步骤以及代码实现</h3><p>WGCNA（weighted gene co-expression netwrk analysis）是一种重要的构建共表达网络的方法，也是对应 R 包的名字。该方法就是基于输入的基因表达值（基因芯片或者 RNA-seq 数据），构建基于无标度网络的基因共表达网络，然后去分析基因之间的相似性、将具有相似功能的基因聚类成同一模块、将模块与不同性状联系起来以及鉴定模块内的驱动基因（driver gene）等等。使用 R 包 WGCNA 构建无标度网络的重要步骤是：</p>
+<h4 id="（一）选取合适的 power 值（β）使得网络接近 scale-free 网络，选取β的代码及步骤如下（假定在 R 软件里已经安装好 WGCNA）："><a href="#（一）选取合适的 power 值（β）使得网络接近 scale-free 网络，选取β的代码及步骤如下（假定在 R 软件里已经安装好 WGCNA）：" class="headerlink" title="（一）选取合适的 power 值（β）使得网络接近 scale-free 网络，选取β的代码及步骤如下（假定在 R 软件里已经安装好 WGCNA）："></a>（一）选取合适的 power 值（β）使得网络接近 scale-free 网络，选取β的代码及步骤如下（假定在 R 软件里已经安装好 WGCNA）：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line">## 导入 WGCNA 包</span><br><span class="line">library(&quot;WGCNA&quot;)</span><br><span class="line"></span><br><span class="line">## 构建幂的向量，一般构建 unsigned 网络，幂 power&lt;15；signed 网络幂 power&lt;30，这里以 unsigned 为例</span><br><span class="line">powers1=seq(from=1,to=15,by=1)</span><br><span class="line"></span><br><span class="line">## 导入包含样品基因表达量的文件，该文件第一列为基因名，列名为样品名称</span><br><span class="line">datExprdataOne1 = read.table(filepath,header = T,sep=&quot;\t&quot;)</span><br><span class="line"></span><br><span class="line">## 把重复的基因名字合并，使用平均值的方法；如果没有重复基因名该步骤也可以不做</span><br><span class="line">datExprdataOne2 = aggregate(datExprdataOne1[,2:dim(datExprdataOne1)[2]],by=list(datExprdataOne1[,1]),FUN=mean)</span><br><span class="line"></span><br><span class="line">## 把基因名字作为合并重复值后数据框的行名</span><br><span class="line">row.names(datExprdataOne2) &lt;- datExprdataOne2$Group.1</span><br><span class="line"></span><br><span class="line">## 删除 datExprdataOne2 的 Group.1 列</span><br><span class="line">datExprdataOne3 &lt;- datExprdataOne2[,2:dim(datExprdataOne2)[2]]</span><br><span class="line"></span><br><span class="line">## 将数据框转置，即列名为样品名称，行名为基因名称</span><br><span class="line">datExprdataOne = t(datExprdataOne3)</span><br><span class="line"></span><br><span class="line">## 遍历每一个 powers1 向量中的 power，寻找最优的 power</span><br><span class="line">pst=pickSoftThreshold(datExprdataOne,powerVector=powers1,moreNetworkConcepts=T)[[2]]</span><br><span class="line"></span><br><span class="line">## 遍历每一个 powers1 向量中的 power，将以该 power 为幂的网络相关指标展现出来</span><br><span class="line"></span><br><span class="line">tiff(PictureName,width=800,heiht=480,units=&quot;px&quot;,pointsize=10)</span><br><span class="line"></span><br><span class="line">cex1=1.2;cex.axis=1.5;cex.lab=1.5;cex.main=1.5</span><br><span class="line"></span><br><span class="line">par(mfrow=c(2,2),mar=c(4,4,3,2)+0.1)</span><br><span class="line"></span><br><span class="line">plot(powers1,-sign(pst[,3])*pst[,2],type=&quot;n&quot;,</span><br><span class="line">     xlab=&quot;Soft Threshold&quot;,</span><br><span class="line">     ylab=&quot;SFT,signed Rˆ2&quot;,cex.axis=cex.axis,cex.main=cex.main,</span><br><span class="line">     cex.lab=cex.lab,main=&quot;Scale Free Fit Index Rˆ2&quot;)</span><br><span class="line"></span><br><span class="line">text(powers1,-sign(pst[,3])*pst[,2],</span><br><span class="line">     labels=powers1,cex=cex1,col=&quot;red&quot;)</span><br><span class="line"></span><br><span class="line">plot(powers1,pst$Density,</span><br><span class="line">     type=&quot;n&quot;,xlab=&quot;Soft Threshold&quot;,ylab=&quot;Density&quot;,</span><br><span class="line">     cex.axis=cex.axis,cex.main=cex.main,cex.lab=cex.lab,</span><br><span class="line">     main=&quot;Density&quot;)</span><br><span class="line"></span><br><span class="line">text(powers1,pst$Density,labels=powers1,cex=cex1,col=&quot;red&quot;)</span><br><span class="line"></span><br><span class="line">plot(powers1,pst$Heterogeneity,type=&quot;n&quot;,xlab=&quot;Soft Threshold&quot;,</span><br><span class="line">     ylab=&quot;Heterogeneity&quot;,cex.main=cex.main,cex.lab=cex.lab,</span><br><span class="line">     cex.axis=cex.axis,main=&quot;Heterogeneity&quot;)</span><br><span class="line"></span><br><span class="line">text(powers1,pst$Heterogeneity,labels=powers1,cex=cex1,col=&quot;red&quot;)</span><br><span class="line"></span><br><span class="line">plot(powers1,pst$Centralization,type=&quot;n&quot;,xlab=&quot;Soft Threshold&quot;,</span><br><span class="line">     ylab=&quot;Centralization&quot;,cex.axis=cex.axis,cex.main=cex.main,</span><br><span class="line">     cex.lab=cex.lab,main=&quot;Centralization&quot;)</span><br><span class="line"></span><br><span class="line">text(powers1,pst$Centralization,labels=powers1,cex=cex1,col=&quot;red&quot;)</span><br><span class="line"></span><br><span class="line">dev.off()</span><br></pre></td></tr></table></figure>
+<p>最终得到的图片形式类似下图所示：</p>
+<p><img src="http://px5k9sfp1.bkt.clouddn.com/Cortex_expression_data_in_GTEx.txtdrop_median_0..png" alt></p>
+<p>结果解释：<br>左上图：x 轴表示不同的 power 值；y 轴表示 scale-free topology index R2，该值越大表明其所对应的网络越接近 scale-free 网络。 一般情况下 power 的值越大，R2 越大。</p>
+<p>右上图：x 轴表示不同的 power 值；y 轴表示网络的 Density，含义接近于网络的平均 connectivity，越大表示网络节点间相互联系越紧密，反之则不紧密，接近 scale-free 网络。一般情况下 power 值越大 Density 越小，网络越接近 scale-free 网络。</p>
+<p>左下图：x 轴表示不同的 power 值；y 轴表示 Heterogeneity，用以衡量网络节点间 connectivity 的变异程度。</p>
+<p>右下图：x 轴表示不同的 power 值；y 轴表示 Centralization，越接近 1 表明网络具有星形拓扑结构，越接近 0 表明网络每个节点具有相同的连接度。一般 power 值越小，Centralization 越大，网络越接近 scale-free 网络。</p>
+<p>综上所述，考虑到上述四种指标，一般情况下 power 值的选择要看使 R2 超过 0.8 的最小 power 值。如果实在没有符合要求的 power，可选取经验值，即 unsigned 网络 power=6;signed 网络 power=12。</p>
+<h4 id="（二）基于β值构建网络模块"><a href="#（二）基于β值构建网络模块" class="headerlink" title="（二）基于β值构建网络模块"></a>（二）基于β值构建网络模块 </h4><p> 使用上一步得到的 datExprdataOne 和β，构建基因共表达网络。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">NetWork = blockwiseModules(datExprdataOne, power = β, maxBlockSize = nGenes,</span><br><span class="line">                       TOMType = type, minModuleSize = 30,</span><br><span class="line">                       reassignThreshold = 0, mergeCutHeight = 0.25,</span><br><span class="line">                       numericLabels = TRUE, pamRespectsDendro = FALSE,</span><br><span class="line">                       verbose = 3)</span><br></pre></td></tr></table></figure></p>
+<p>重要参数解释：<br>power：经过第一步分析得到的最优 power 值；  </p>
+<p>maxBlockSize: 一般情况下构建网络的时候会把输入的表达矩阵分成几份（block）分别计算。如果计算资源充足，最好不拆分矩阵。做法是 MaxBlockSize≥矩阵包含的基因数目；</p>
+<p>TOMType: 值可以为”none”, “unsigned”, “signed”, “signed Nowick”, “unsigned 2”, “signed 2” and “signed Nowick 2”；  </p>
+<p>numericaLabels: 逻辑值（F/T），F 则表示得到的模块用颜色标记，T 则表示得到的模块用数字标记。</p>
+<p>后续下游分析可参考<a href="http://blog.sciencenet.cn/blog-118204-1111379.html" target="_blank" rel="noopener">WGCNA 分析，简单全面的最新教程</a>。</p>
+<p>参考资料：<br>[1] Cesar A. Hidalgo and Albert-Laszlo Barabasi (2008), Scholarpedia, 3(1):1716.<br>[2] Langfelder, Peter, and Steve Horvath. “WGCNA: an R package for weighted correlation network analysis.” BMC bioinformatics 9.1 (2008): 559.</p>
+<h1 id="END"><a href="#END" class="headerlink" title="END"></a><center> END </center></h1>
       
     </div>
     
@@ -479,7 +488,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>Post link:</strong>
-    <a href="https://eatdrinkbreathe.top/2019/08/25/计算生物学家/" title="生物码农 VS 计算生物学家">https://eatdrinkbreathe.top/2019/08/25/计算生物学家/</a>
+    <a href="https://eatdrinkbreathe.top/2019/09/22/labelFreeNetwork/" title="生物网络的概念（二）：无标度网络（scale-free network)">https://eatdrinkbreathe.top/2019/09/22/labelFreeNetwork/</a>
   </li>
   <li class="post-copyright-license">
     <strong>Copyright Notice: </strong>
@@ -494,7 +503,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/译文/" rel="tag"># 译文</a>
+            <a href="/tags/生物网络的概念/" rel="tag"># 生物网络的概念</a>
+          
+            <a href="/tags/WGCNA/" rel="tag"># WGCNA</a>
+          
+            <a href="/tags/无标度网络/" rel="tag"># 无标度网络</a>
           
         </div>
       
@@ -522,8 +535,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/06/04/networkConcepts1/" rel="next" title="生物网络的概念（一）：毗邻矩阵（Adjacency Matrix）">
-                <i class="fa fa-chevron-left"></i> 生物网络的概念（一）：毗邻矩阵（Adjacency Matrix）
+              <a href="/2019/09/14/Cmap_tools/" rel="next" title="药物基因组学数据库 Connectivity Map 使用方法简介（二）">
+                <i class="fa fa-chevron-left"></i> 药物基因组学数据库 Connectivity Map 使用方法简介（二）
               </a>
             
           </div>
@@ -531,10 +544,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/09/01/药物基因组学数据库Connectivity map简介/" rel="prev" title="药物基因组学数据库 Connectivity Map 使用方法简介（一）">
-                药物基因组学数据库 Connectivity Map 使用方法简介（一） <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -669,7 +678,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#《所以，你想成为一名计算生物学家？》"><span class="nav-number">1.</span> <span class="nav-text">《所以，你想成为一名计算生物学家？》</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#原文信息：Loman-Nick-and-Mick-Watson-“So-you-want-to-be-a-computational-biologist-”-Nature-biotechnology-31-11-2013-996"><span class="nav-number">1.1.</span> <span class="nav-text">原文信息：Loman, Nick, and Mick Watson. “So you want to be a computational biologist?.” Nature biotechnology 31.11 (2013): 996.</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#明确你的目标并选择合适的研究方法"><span class="nav-number">1.2.</span> <span class="nav-text">明确你的目标并选择合适的研究方法 </span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#为自己和他人的脚本设置正负对照"><span class="nav-number">1.3.</span> <span class="nav-text">为自己和他人的脚本设置正负对照 </span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#你是个科学家，不是程序员（码农）"><span class="nav-number">1.4.</span> <span class="nav-text">你是个科学家，不是程序员（码农）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用版本控制软件"><span class="nav-number">1.5.</span> <span class="nav-text">使用版本控制软件 </span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#问问自己是否需要流程化"><span class="nav-number">1.6.</span> <span class="nav-text">问问自己是否需要流程化 </span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#奥巴马式思维模式"><span class="nav-number">1.7.</span> <span class="nav-text">奥巴马式思维模式 </span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#科研需要质疑精神，尽信文献不如无文献"><span class="nav-number">1.8.</span> <span class="nav-text">科研需要质疑精神，尽信文献不如无文献 </span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#适合进行计算生物学分析的工具"><span class="nav-number">1.9.</span> <span class="nav-text">适合进行计算生物学分析的工具 </span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#像侦探一样思考"><span class="nav-number">1.10.</span> <span class="nav-text">像侦探一样思考 </span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#站在巨人的肩膀上"><span class="nav-number">1.11.</span> <span class="nav-text">站在巨人的肩膀上 </span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#END"><span class="nav-number">1.12.</span> <span class="nav-text"> END </span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#无标度网络的概念及其意义"><span class="nav-number">1.</span> <span class="nav-text">无标度网络的概念及其意义 </span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#构建无标度网络的方法步骤以及代码实现"><span class="nav-number">2.</span> <span class="nav-text">构建无标度网络的方法步骤以及代码实现</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#（一）选取合适的 power 值（β）使得网络接近 scale-free 网络，选取β的代码及步骤如下（假定在 R 软件里已经安装好 WGCNA）："><span class="nav-number">2.1.</span> <span class="nav-text">（一）选取合适的 power 值（β）使得网络接近 scale-free 网络，选取β的代码及步骤如下（假定在 R 软件里已经安装好 WGCNA）：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#（二）基于β值构建网络模块"><span class="nav-number">2.2.</span> <span class="nav-text">（二）基于β值构建网络模块 </span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#END"><span class="nav-number"></span> <span class="nav-text"> END </span></a></li></div>
             
 
           </div>
