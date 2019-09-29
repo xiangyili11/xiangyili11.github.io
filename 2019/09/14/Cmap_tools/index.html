@@ -113,18 +113,17 @@
 <meta property="og:site_name" content="Li Xiangyi&#39;s Blog">
 <meta property="og:description" content="摘要：Connectivity Map(CMap)是2006年推出的数据库，之后经过一次更新，使得数据库包含了1309个小分子药物处理五类人类肿瘤细胞系后的约7000个基因表达谱数据。数据库历经十几年，仍然是研究药物基因组学的科研人员不可或缺的宝贵资源。CMap数据库提供了的网页分析工具，本文将简要介绍一下其使用方法。">
 <meta property="og:locale" content="zh-hans">
-<meta property="og:image" content="http://px5k9sfp1.bkt.clouddn.com/grp%E6%96%87%E4%BB%B6.PNG">
+<meta property="og:image" content="https://eatdrinkbreathe.top/2019/09/14/Cmap_tools/grp.PNG">
 <meta property="og:image" content="https://eatdrinkbreathe.top/2019/09/14/Cmap_tools/query_page.PNG">
-<meta property="og:image" content="https://eatdrinkbreathe.top/2019/09/14/Cmap_tools/quick_query.PNG">
 <meta property="og:image" content="https://eatdrinkbreathe.top/2019/09/14/Cmap_tools/load_signature.PNG">
 <meta property="og:image" content="https://eatdrinkbreathe.top/2019/09/14/Cmap_tools/signature_query.PNG">
 <meta property="og:image" content="https://eatdrinkbreathe.top/2019/09/14/Cmap_tools/results.PNG">
 <meta property="og:image" content="https://eatdrinkbreathe.top/2019/09/14/Cmap_tools/enrichment_result.PNG">
-<meta property="og:updated_time" content="2019-09-25T12:29:52.762Z">
+<meta property="og:updated_time" content="2019-09-29T13:16:29.391Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="药物基因组学数据库 Connectivity Map 使用方法简介（二）">
 <meta name="twitter:description" content="摘要：Connectivity Map(CMap)是2006年推出的数据库，之后经过一次更新，使得数据库包含了1309个小分子药物处理五类人类肿瘤细胞系后的约7000个基因表达谱数据。数据库历经十几年，仍然是研究药物基因组学的科研人员不可或缺的宝贵资源。CMap数据库提供了的网页分析工具，本文将简要介绍一下其使用方法。">
-<meta name="twitter:image" content="http://px5k9sfp1.bkt.clouddn.com/grp%E6%96%87%E4%BB%B6.PNG">
+<meta name="twitter:image" content="https://eatdrinkbreathe.top/2019/09/14/Cmap_tools/grp.PNG">
 
 
 
@@ -455,10 +454,10 @@
         <p>摘要：Connectivity Map(CMap)是 2006 年推出的数据库，之后经过一次更新，使得数据库包含了 1309 个小分子药物处理五类人类肿瘤细胞系后的约 7000 个基因表达谱数据。数据库历经十几年，仍然是研究药物基因组学的科研人员不可或缺的宝贵资源。CMap 数据库提供了的网页分析工具，本文将简要介绍一下其使用方法。<br><a id="more"></a></p>
 <h3 id="数据准备"><a href="# 数据准备" class="headerlink" title="数据准备"></a>数据准备</h3><p>1）用户需提供基于 Affy Metrix HG-U133A 或者 HT_HG-U133A_EA 或者 HT_HG-U133A 平台的基因芯片数据。因为 CMap 的 7000 多个基因芯片数据是基于上述平台的，其中 5000 多个是基于 HT_HG-U133A 平台的，所以基于模式匹配算法的网页工具也需要用户提供一致的数据类型。Affy Metrix 官网提供了将基因与探针集相互转化的信息和工具。</p>
 <p>2）根据研究目的，提供相应的上下调探针集列表。例如，如果研究某种疾病，那么就要提供疾病组 vs 正常组的上调和下调探针集列表；如果要研究药物的作用，那么就要提供处理组 vs 对照组的上调和下调探针集列表（注：网站限制上下调探针集总数在 1000 以内）。<br>3）将上下调基因列表文件转化为.grp 格式。就是将上下调基因列表文件后缀名改为.grp。如下图所示:</p>
-<p><img src="http://px5k9sfp1.bkt.clouddn.com/grp%E6%96%87%E4%BB%B6.PNG" alt></p>
+<p><img src="/2019/09/14/Cmap_tools/grp.PNG" alt></p>
 <h3 id="数据处理"><a href="# 数据处理" class="headerlink" title="数据处理"></a>数据处理 </h3><p> 数据输入接口有四种，即</p>
 <p><img src="/2019/09/14/Cmap_tools/query_page.PNG" alt></p>
-<p><img src="/2019/09/14/Cmap_tools/quick_query.PNG" alt><br>点击“浏览”，分别上传本地存放的上下调探针集列表文件。然后点击”execute query”执行分析，等待，点击“view results now”就可以看到分析结果。</p>
+<p>点击“浏览”，分别上传本地存放的上下调探针集列表文件。然后点击”execute query”执行分析，等待，点击“view results now”就可以看到分析结果。</p>
 <p><img src="/2019/09/14/Cmap_tools/load_signature.PNG" alt></p>
 <p>load signature 与 quick query 的区别就是：load signature 可以让用户对每一次的分析做个性化描述，这对同时执行多次不同分析的用户来说很有用，而 quick query 则简单粗暴，适合一次性分析，不提供数据描述和命名功能。</p>
 <p><img src="/2019/09/14/Cmap_tools/signature_query.PNG" alt></p>
