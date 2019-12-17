@@ -320,6 +320,181 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://eatdrinkbreathe.top/2019/12/17/DrugBank源文件full_database.xml文件的数据处理/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="lixiangyi">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Li Xiangyi's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/12/17/DrugBank源文件full_database.xml文件的数据处理/" itemprop="url">DrugBank 源文件 full_database.xml 文件的数据处理</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-12-17T15:02:44+08:00">
+                2019-12-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Bioinformatics/" itemprop="url" rel="index">
+                    <span itemprop="name">生物信息学</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/12/17/DrugBank源文件full_database.xml文件的数据处理/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/12/17/DrugBank源文件full_database.xml文件的数据处理/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  840字
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>摘要：DrugBank 是药物研究领域非常重要的数据库，其数据提供免费下载，但是数据结构对普通研究人员很不友好，为 xml 格式的文件，需要进一步整理才能得到结构清晰的数据，因此本文将据介绍一种将 DrugBank full_database.xml 文件整理成结构化文件的方法。</p>
+<p><a href="https://www.drugbank.ca/" target="_blank" rel="noopener">DrugBank</a>数据库是一个重要的药物理化属性数据库，由加拿大卫生研究院、亚伯达省创新 - 健康解决方案和代谢组学创新中心（TMIC）提供技术支持，目前（2019 年）整合了一万多种药物的生物信息学和化学信息学资源，并提供了详细的药物数据与药物靶标信息及其作用机制的信息，包括药物化学、药理学、药代动力学、ADME 及药物相互作用信息。利用该数据库网站可方便地查询药物的多种信息。该数据库允许研究人员免费下载网站数据。</p>
+<p>DrugBank 原始数据是 full_database.xml，因此需要进一步转化成容易处理的结构化文本格式（.txt 或者.csv)。这里记录一种处理方法供参考。以获取小分子药物的名称、所处临床阶段、药物描述信息、药物适应症为例。<br>数据：2018 年 7 月 DrugBank 网站下载的 <a href="https://pan.baidu.com/s/1JLKgbNl-JvVA51ulR--t1Q" target="_blank" rel="noopener">full_data.xml</a>（百度网盘提取码：at9e）文件<br> 工具：Python3 及其 pandas、untangle 库 <br> 代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">import untangle# 导入该库用以将 XML 文件映射为一个 Python 对象，使相同名字的元素值组成数组</span><br><span class="line">import pandas as pd# 导入 pandas 库用以存储结果数据</span><br><span class="line"></span><br><span class="line"># 读取 XML 文件</span><br><span class="line">drugbank_xml = untangle.parse(&quot;F:/00_DrugRepo_database_predicTool/Drugbank_based/drugbank_all_full_database.xml/full_database.xml&quot;)</span><br><span class="line">df_drugbank_sm=pd.DataFrame(columns=[&quot;drugbank_id&quot;,&quot;name&quot;,&quot;cas&quot;,&quot;group&quot;,&quot;description&quot;,&quot;indication&quot;])</span><br><span class="line"></span><br><span class="line">i=0</span><br><span class="line">#drugbank_xml.drugbank.drug,drugbank_xml 是对象名，  </span><br><span class="line">#drugbank 是 xml 文件最外层的标记名称（根元素），  </span><br><span class="line">#drug 是每个子元素的标记名称        </span><br><span class="line">for drug in drugbank_xml.drugbank.drug:# 对每一个子元素进行循环</span><br><span class="line">    drug_type= str(drug[&quot;type&quot;])# 获取每个子元素的 &quot;type&quot; 属性</span><br><span class="line">    </span><br><span class="line">    # select for small molecule drugs，“type”属性为小分子药物的英文名称</span><br><span class="line">    if drug_type in [&quot;small molecule&quot;, &quot;Small Molecule&quot;, &quot;Small molecule&quot;]:    </span><br><span class="line">        </span><br><span class="line">        #Get drugbank_id，获取 drug ID 属性</span><br><span class="line">        for id in drug.drugbank_id:</span><br><span class="line">        #由于 drugbank 中每个药物有多个不同的 ID，这里选取 primary ID</span><br><span class="line">            if str(id[&quot;primary&quot;])==&quot;true&quot;:</span><br><span class="line">                df_drugbank_sm.loc[i, &quot;drugbank_id&quot;]=id.cdata# 获取 ID 值，下同</span><br><span class="line">        </span><br><span class="line">        #Drug name，获取药物名称</span><br><span class="line">        df_drugbank_sm.loc[i,&quot;name&quot;]=drug.name.cdata</span><br><span class="line">        </span><br><span class="line">        #Drug CAS，获取药物 CAS number</span><br><span class="line">        df_drugbank_sm.loc[i, &quot;cas&quot;]=drug.cas_number.cdata</span><br><span class="line">        </span><br><span class="line">        #Drug group，获取药物所处的临床阶段</span><br><span class="line">        groupcdata = &quot;&quot;</span><br><span class="line">        for group in drug.groups.group:</span><br><span class="line">            groupcdata = groupcdata+group.cdata+&quot;,&quot;</span><br><span class="line">        df_drugbank_sm.loc[i, &quot;group&quot;]=groupcdata</span><br><span class="line">        </span><br><span class="line">        #Drug indication，获取药物适应症</span><br><span class="line">        df_drugbank_sm.loc[i, &quot;indication&quot;]=drug.indication.cdata</span><br><span class="line">        </span><br><span class="line">        #Drug descriptions, 获取药物的描述信息</span><br><span class="line">        df_drugbank_sm.loc[i, &quot;description&quot;]=drug.description.cdata</span><br><span class="line">        </span><br><span class="line">        i=i+1</span><br><span class="line"># 将结果写入文件</span><br><span class="line">df_drugbank_sm.to_csv(&quot;drugbank_drugName_group_description_indication.txt&quot;,sep=&quot;\t&quot;,index=False)</span><br></pre></td></tr></table></figure>
+<p>另：该代码只用于少量信息的提取，如果还需要药物的其他信息，可以直接在 for 循环里添加语句，找到对应的子元素名称（也就是 drugbank 里面的条目名称），依葫芦画瓢即可。<br>参考资料：<a href="https://mp.weixin.qq.com/s/1meZwdQWbdygZt_Qz7a7pA" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/1meZwdQWbdygZt_Qz7a7pA</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://eatdrinkbreathe.top/2019/12/15/双聚类及多聚类的概念/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -724,8 +899,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Computer-programing/" itemprop="url" rel="index">
-                    <span itemprop="name">计算机编程</span>
+                  <a href="/categories/Bioinformatics/" itemprop="url" rel="index">
+                    <span itemprop="name">生物信息学</span>
                   </a>
                 </span>
 
@@ -1882,181 +2057,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://eatdrinkbreathe.top/2019/06/01/被伤害和侮辱的人们/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="lixiangyi">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Li Xiangyi's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/06/01/被伤害和侮辱的人们/" itemprop="url">《被伤害和侮辱的人们》读后感</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-06-01T15:46:33+08:00">
-                2019-06-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Others/" itemprop="url" rel="index">
-                    <span itemprop="name">随笔</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/06/01/被伤害和侮辱的人们/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/06/01/被伤害和侮辱的人们/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Words count in article&#58;</span>
-                
-                <span title="Words count in article">
-                  1.4k字
-                </span>
-              
-
-              
-
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p><strong>阅读后的思考（一）</strong><br>&ensp;&ensp;&ensp;&ensp;近一段时间读完的一部长篇小说（继白鹿原、沉默的大多数、遥远的救世主、天幕红尘），感觉没有读完其他小说之后产生的震撼，虽然是俄国著名作家陀思妥耶夫斯基的著作。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/06/01/被伤害和侮辱的人们/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2107,7 +2107,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -2118,7 +2118,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -2129,7 +2129,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -2180,7 +2180,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">20.3k</span>
+    <span title="Site words total count">21.2k</span>
   
 </div>
 
