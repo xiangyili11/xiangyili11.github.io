@@ -113,7 +113,7 @@
 <meta property="og:site_name" content="Little Faith&#39;s Blog">
 <meta property="og:description" content="摘要：本文介绍了一种对GTEx数据库进行eQTL分析的方法。使用的主要工具包括MatrixEQTL和plink。">
 <meta property="og:locale" content="zh-hans">
-<meta property="og:updated_time" content="2020-04-12T14:18:43.361Z">
+<meta property="og:updated_time" content="2020-04-12T14:28:20.184Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="基于 MatrixEQTL 进行 eQTL mapping analysis——以 GTEx 数据库为例">
 <meta name="twitter:description" content="摘要：本文介绍了一种对GTEx数据库进行eQTL分析的方法。使用的主要工具包括MatrixEQTL和plink。">
@@ -460,16 +460,12 @@
 <p>输入：file.vcf<br>输出：plink.dupvar（重复的 snpid 文件）</p>
 <p>注：方法一和方法二的区别是方法二更准确，其对于每一个重复的项保留了一项（suppress-first），而方法一删除了全部重复项。</p>
 <p><strong>第二步：过滤 snpid 和样本 id</strong>  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">plink --vcf ***.vcf.gz --recode --out ***.name --keep ***.sampleid --missing --freq --maf 0.02 --exclude plink.dupvar</span><br></pre></td></tr></table></figure>
-<p>输入：<br><strong><em>.vcf.gz，原始 vcf 文件；  
-</em></strong>.sampleid，用户想保留的 sampleid；<br>plink.dupvar，用户想过滤掉的 snpid。  </p>
-<p>结果：<br><strong><em>.name.frq，   所有 snpid 的等位基因（A1，A2)以及 MAF；  
-</em></strong>.name.lmiss，  所选样本的 snpid 确实情况；<br><strong><em>.name.imiss，   每个样本基因型缺失情况；  
-</em></strong>.name.ped，更新后的 ped 文件；<br><em>*</em>.name.map，更新后的 map 文件。  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">plink --vcf .vcf.gz --recode --out .name --keep .sampleid --missing --freq --maf 0.02 --exclude plink.dupvar</span><br></pre></td></tr></table></figure>
+<p>输入：<br>.vcf.gz，原始 vcf 文件；<br>.sampleid，用户想保留的 sampleid；<br>plink.dupvar，用户想过滤掉的 snpid。  </p>
+<p>结果：<br>.name.frq，   所有 snpid 的等位基因（A1，A2)以及 MAF；<br>.name.lmiss，  所选样本的 snpid 确实情况；<br>.name.imiss，   每个样本基因型缺失情况；<br>.name.ped，更新后的 ped 文件；<br>.name.map，更新后的 map 文件。  </p>
 <p><strong>第三步：计算 snp 矩阵</strong>  </p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vcftools --gzvcf ***.vcf.gz --012 --out ***.name --keep ***.sampleid --maf 0.02 --exclude plink.dupvar</span><br></pre></td></tr></table></figure>
-<p>输入：<br><strong><em>.vcf.gz，原始 vcf 文件；  
-</em></strong>.sampid，用户想保留的样品 id；<br>plink.dupvar，用户想过滤掉的 snpid。  </p>
+<p>输入：<br>.vcf.gz，原始 vcf 文件；<br>.sampid，用户想保留的样品 id；<br>plink.dupvar，用户想过滤掉的 snpid。  </p>
 <p>输出：<br>name.012，snpmatrix（样本数 *snpid 数），纯数字矩阵，只有行索引（是样本 id 在原始.vcf.gz 文件中的索引号），没有列索引。与 MatrixEQTL 要求的输入文件 SNP.txt 正好相反，所以后面需要转置；<br>name.012.pos，snpid 所在的染色体及物理位置；<br>name.012.indv，样本 id。  </p>
 <p><strong>第四步：snp 矩阵转置 </strong><br> 因为 SNP.tx 有格式要求，所以行名必须是 snpid，列名必须是样本名称。因此需要删除 name.012 的第一列（即索引号），然后转置。</p>
 <p>① 快速删除第一列 Index  </p>
