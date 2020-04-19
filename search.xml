@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>R 语言绘图——为层次聚类图及树状图添加 side bar</title>
+      <link href="/2020/04/19/R%E8%81%9A%E7%B1%BB%E5%9B%BE%E6%B7%BB%E5%8A%A0side%20bar/"/>
+      <url>/2020/04/19/R%E8%81%9A%E7%B1%BB%E5%9B%BE%E6%B7%BB%E5%8A%A0side%20bar/</url>
+      
+        <content type="html"><![CDATA[<p>摘要：介绍一种对热图（heatmap)和树状图（dendrogram）添加注释信息条（side bar)的方法。<a id="more"></a></p><p>聚类分析作图往往包含热图（heatmap)和树状图（dendrogram）。热图用来展示每个样本点数值大小和聚集模式。树状图用来表示样本之间以及变量之间的距离远近（或者相似性大小）。R 官网目前提供了至少 45 个可以绘制热图的包（packages），其中比较常见的、可以添加行列注释信息条的聚类作图包有 <a href="https://cran.r-project.org/web/packages/pheatmap/index.html" target="_blank" rel="noopener">pheatmap</a>、<a href="https://cran.r-project.org/web/packages/gplots/index.html" target="_blank" rel="noopener">gplots</a> 等等。以下简单介绍一下对热图（heatmap)和树状图（dendrogram）添加注释信息条（side bar)的方法（以 mtcars 数据集为例）。</p><h4 id="树状图 - 热图 -side-bar"><a href="# 树状图 - 热图 -side-bar" class="headerlink" title="树状图 + 热图 +side bar"></a>树状图 + 热图 +side bar</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">library(gplots)# 导入 R 包</span><br><span class="line">data(mtcars)# 导入示例数据</span><br><span class="line">x &lt;- as.matrix(mtcars)#gplots 要求输入 numeric matrix，所以要转化为数量矩阵</span><br><span class="line">rc &lt;- rainbow(nrow(x),start=0, end=.3)# 用于绘制 side bar，给每一个行名赋一种颜色</span><br><span class="line">cc &lt;- rainbow(ncol(x), start=0, end=.3)# 用于绘制 side bar，给每一个列名赋一种颜色</span><br><span class="line">hv &lt;- heatmap.2(x,RowSideColors=rc, ColSideColors=cc)# 画图</span><br></pre></td></tr></table></figure><p>结果如下图：</p><p><img src="https://img2020.cnblogs.com/blog/2003015/202004/2003015-20200419150908650-247186127.png" alt></p><h4 id="树状图 -side-bar"><a href="# 树状图 -side-bar" class="headerlink" title="树状图 +side bar"></a>树状图 +side bar</h4><p>如果数据量比较大，不想显示热图部分，而只想显示树状图部分，则可以使用 <a href="https://cran.r-project.org/web/packages/dendextend/index.html" target="_blank" rel="noopener">dendextend</a> 包（仍以 mtcars 数据集为例）实现。  </p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">library(dendextend)# 导入 R 包</span><br><span class="line">data(mtcars)# 导入数据</span><br><span class="line">dend &lt;- as.dendrogram(hclust(dist(mtcars)))</span><br><span class="line"></span><br><span class="line"># 给每种样本（汽车）赋一种颜色，这里有四种汽车类型</span><br><span class="line">car_type &lt;- rep(&quot;Other&quot;, length(rownames(mtcars)))</span><br><span class="line">is_x &lt;- grepl(&quot;Merc&quot;, rownames(mtcars))</span><br><span class="line">car_type[is_x] &lt;- &quot;Mercedes&quot;</span><br><span class="line">is_x &lt;- grepl(&quot;Mazda&quot;, rownames(mtcars))</span><br><span class="line">car_type[is_x] &lt;- &quot;Mazda&quot;</span><br><span class="line">is_x &lt;- grepl(&quot;Toyota&quot;, rownames(mtcars))</span><br><span class="line">car_type[is_x] &lt;- &quot;Toyota&quot;</span><br><span class="line">car_type &lt;- factor(car_type)</span><br><span class="line">n_car_types &lt;- length(unique(car_type))</span><br><span class="line">cols_4 &lt;- colorspace::rainbow_hcl(n_car_types, c = 70, l  = 50)</span><br><span class="line">col_car_type &lt;- cols_4[car_type]</span><br><span class="line"></span><br><span class="line"># 画图</span><br><span class="line">par(mar = c(12,4,1,1))</span><br><span class="line">plot(dend)</span><br><span class="line">colored_bars(col_car_type,dend,rowLabels=&quot;&quot;)</span><br></pre></td></tr></table></figure><p>结果如下图：</p><p><img src="https://img2020.cnblogs.com/blog/2003015/202004/2003015-20200419151134351-797138465.png" alt></p><p>另：有时候数据量非常大，样本名称叠加到一起会糊成一片，导致看不清楚。不如去掉样本名称，代码如下：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 画图</span><br><span class="line">par(mar = c(12,4,1,1))</span><br><span class="line">labels(dend) &lt;- &quot;&quot;</span><br><span class="line">plot(dend)</span><br><span class="line">colored_bars(col_car_type,dend,rowLabels=&quot;&quot;)</span><br></pre></td></tr></table></figure><p>结果如下图所示：</p><p><img src="https://img2020.cnblogs.com/blog/2003015/202004/2003015-20200419151158219-2060275282.png" alt></p><p>参考资料：<br>[1] <a href="https://cran.r-project.org/web/packages/dendextend/vignettes/FAQ.html#how-to-color-a-dendrograms-brancheslabels-based-on-cluster-i.e.-cutree-result" target="_blank" rel="noopener">Frequently asked questions</a> </p><p>[2] <a href="https://cran.r-project.org/web/packages/dendextend/vignettes/Cluster_Analysis.html" target="_blank" rel="noopener">Hierarchical cluster analysis on famous data sets - enhanced with the dendextend package</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 生物信息学 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> R </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>基于 MatrixEQTL 进行 eQTL mapping analysis——以 GTEx 数据库为例</title>
       <link href="/2020/04/12/MatrixEQTL/"/>
       <url>/2020/04/12/MatrixEQTL/</url>
@@ -220,9 +245,9 @@
       
         <tags>
             
-            <tag> Connectivity Map </tag>
-            
             <tag> 算法 </tag>
+            
+            <tag> Connectivity Map </tag>
             
         </tags>
       
@@ -247,9 +272,9 @@
       
         <tags>
             
-            <tag> Connectivity Map </tag>
-            
             <tag> 算法 </tag>
+            
+            <tag> Connectivity Map </tag>
             
         </tags>
       
