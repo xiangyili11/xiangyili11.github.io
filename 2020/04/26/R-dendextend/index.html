@@ -94,7 +94,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="R,">
 
 
 
@@ -105,16 +105,21 @@
 
 
 
-<meta name="description" content="猛吃猛喝猛喘气">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Little Faith&#39;s Blog">
-<meta property="og:url" content="https://eatdrinkbreathe.top/archives/2019/12/index.html">
+<meta name="description" content="R包dendextend是一个树状图绘图的综合工具，它提供了一系列的调整树状图的图形参数，如颜色，大小以及分支类型、节点和标签等，能用来可视化和比较树状图。接下来简单介绍其赋予不同样本（或标签）不同颜色的功能。">
+<meta name="keywords" content="R">
+<meta property="og:type" content="article">
+<meta property="og:title" content="R 语言绘图——给树状图标签赋予不同颜色">
+<meta property="og:url" content="https://eatdrinkbreathe.top/2020/04/26/R-dendextend/index.html">
 <meta property="og:site_name" content="Little Faith&#39;s Blog">
-<meta property="og:description" content="猛吃猛喝猛喘气">
+<meta property="og:description" content="R包dendextend是一个树状图绘图的综合工具，它提供了一系列的调整树状图的图形参数，如颜色，大小以及分支类型、节点和标签等，能用来可视化和比较树状图。接下来简单介绍其赋予不同样本（或标签）不同颜色的功能。">
 <meta property="og:locale" content="zh-hans">
+<meta property="og:image" content="https://images.cnblogs.com/cnblogs_com/eat-drink-breathe-hard/1744659/o_200426105219Rplot-4.png">
+<meta property="og:image" content="https://images.cnblogs.com/cnblogs_com/eat-drink-breathe-hard/1744659/o_200426105232Rplot-6.png">
+<meta property="og:updated_time" content="2020-04-26T13:37:11.762Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Little Faith&#39;s Blog">
-<meta name="twitter:description" content="猛吃猛喝猛喘气">
+<meta name="twitter:title" content="R 语言绘图——给树状图标签赋予不同颜色">
+<meta name="twitter:description" content="R包dendextend是一个树状图绘图的综合工具，它提供了一系列的调整树状图的图形参数，如颜色，大小以及分支类型、节点和标签等，能用来可视化和比较树状图。接下来简单介绍其赋予不同样本（或标签）不同颜色的功能。">
+<meta name="twitter:image" content="https://images.cnblogs.com/cnblogs_com/eat-drink-breathe-hard/1744659/o_200426105219Rplot-4.png">
 
 
 
@@ -144,13 +149,13 @@
 
 
 
-  <link rel="canonical" href="https://eatdrinkbreathe.top/archives/2019/12/">
+  <link rel="canonical" href="https://eatdrinkbreathe.top/2020/04/26/R-dendextend/">
 
 
 
 
 
-  <title>Archive | Little Faith's Blog</title>
+  <title>R 语言绘图——给树状图标签赋予不同颜色 | Little Faith's Blog</title>
   
 
 
@@ -169,7 +174,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -305,177 +310,241 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://eatdrinkbreathe.top/2020/04/26/R-dendextend/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="sunny">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Little Faith's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h1 class="post-title" itemprop="name headline">R 语言绘图——给树状图标签赋予不同颜色</h1>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-04-26T21:36:32+08:00">
+                2020-04-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
-        
-        Um..! 17 posts in total. Keep on posting.
-      </span>
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Bioinformatics/" itemprop="url" rel="index">
+                    <span itemprop="name">生物信息学</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/04/26/R-dendextend/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/04/26/R-dendextend/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>浏览
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  392字
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
+      
 
+      
+        <p>R 包 <a href="https://cran.r-project.org/web/packages/dendextend/index.html" target="_blank" rel="noopener">dendextend</a> 是一个树状图绘图的综合工具，它提供了一系列的调整树状图的图形参数，如颜色，大小以及分支类型、节点和标签等，能用来可视化和比较树状图。接下来简单介绍其赋予不同样本（或标签）不同颜色的功能。<a id="more"></a></p>
+<h4 id="不同标签，不同颜色"><a href="# 不同标签，不同颜色" class="headerlink" title="不同标签，不同颜色"></a>不同标签，不同颜色</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"># install.packages(&quot;dendextend&quot;)# 安装包</span><br><span class="line">library(dendextend)# 导入包</span><br><span class="line"></span><br><span class="line">data(USArrests)# 该数据集包含了 1973 年美国 50 个州每 10 万居民因犯罪而被捕的统计数据。</span><br><span class="line">dend &lt;- as.dendrogram(hclust(dist(USArrests[1:10,])))# 简单起见仅取 10 个样本</span><br><span class="line"></span><br><span class="line">### 原始图，没有区分颜色</span><br><span class="line">labels_colors(dend)# 查看树状图标签的颜色，没有赋值，所以没有颜色，结果为 NULL</span><br><span class="line">## NULL</span><br><span class="line">par(mfrow = c(1,2))</span><br><span class="line">plot(dend, main = &quot;Original dend&quot;)</span><br><span class="line"></span><br><span class="line">### 修饰图，增加区分颜色</span><br><span class="line">labels_colors(dend) &lt;- 1:10# 赋予 10 个样本 10 个标签</span><br><span class="line">plot(dend, main = &quot;A color for every state&quot;)</span><br></pre></td></tr></table></figure>
+<p><img src="https://images.cnblogs.com/cnblogs_com/eat-drink-breathe-hard/1744659/o_200426105219Rplot-4.png" alt></p>
+<h4 id="同一类别，同一颜色"><a href="# 同一类别，同一颜色" class="headerlink" title="同一类别，同一颜色"></a>同一类别，同一颜色 </h4><p> 有时候想直观地看看同一类别是否聚到了一起，可以给每一类赋予同一种颜色，增加区分度。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"># install.packages(&quot;dendextend&quot;)</span><br><span class="line">library(dendextend)</span><br><span class="line"></span><br><span class="line">small_iris &lt;- iris[c(1,2,3,51,52,53,101,102,103), ]</span><br><span class="line">dend &lt;- as.dendrogram(hclust(dist(small_iris[,-5])))</span><br><span class="line"></span><br><span class="line"># 原始图，没有区分颜色</span><br><span class="line">labels_colors(dend)</span><br><span class="line">## NULL</span><br><span class="line">par(mfrow = c(1,2))</span><br><span class="line">plot(dend, main = &quot;Original dend&quot;)</span><br><span class="line"></span><br><span class="line"># 修饰图，增加区分颜色</span><br><span class="line">types &lt;- factor(small_iris[,5])</span><br><span class="line">n_types &lt;- length(unique(small_iris[,5]))</span><br><span class="line">cols &lt;- colorspace::rainbow_hcl(n_types, c = 70, l  = 50)</span><br><span class="line">colors_to_use &lt;- cols[types]</span><br><span class="line"></span><br><span class="line">labels_colors(dend) &lt;- colors_to_use</span><br><span class="line">plot(dend, main = &quot;A color for every Species&quot;)</span><br></pre></td></tr></table></figure></p>
+<p><img src="https://images.cnblogs.com/cnblogs_com/eat-drink-breathe-hard/1744659/o_200426105232Rplot-6.png" alt></p>
+<p>参考资料：<a href="https://cran.r-project.org/web/packages/dendextend/vignettes/FAQ.html#how-to-color-a-dendrograms-brancheslabels-based-on-cluster-i.e.-cutree-result" target="_blank" rel="noopener">Frequently asked questions</a> </p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:</strong>
+    sunny
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link:</strong>
+    <a href="https://eatdrinkbreathe.top/2020/04/26/R-dendextend/" title="R 语言绘图——给树状图标签赋予不同颜色">https://eatdrinkbreathe.top/2020/04/26/R-dendextend/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice: </strong>
+    All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> unless stating additionally.
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/R/" rel="tag"># R</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
         
-        
+
         
 
         
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2019">2019</h1>
+          <div id="needsharebutton-postbottom">
+            <span class="btn">
+              <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </span>
           </div>
         
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/12/24/人皮论语读后感/" itemprop="url">
-              
-                <span itemprop="name">《人皮论语》读后感</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-12-24T19:52:12+08:00" content="2019-12-24">
-          12-24
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
+        </div>
+      
       
 
-        
-        
-        
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/04/19/R聚类图添加side bar/" rel="next" title="R 语言绘图——为层次聚类图及树状图添加 side bar">
+                <i class="fa fa-chevron-left"></i> R 语言绘图——为层次聚类图及树状图添加 side bar
+              </a>
+            
+          </div>
 
-        
-        
+          <span class="post-nav-divider"></span>
 
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/12/20/科学研究是什么/" itemprop="url">
-              
-                <span itemprop="name">科学研究是什么</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-12-20T20:41:34+08:00" content="2019-12-20">
-          12-20
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/12/17/DrugBank源文件full_database.xml文件的数据处理/" itemprop="url">
-              
-                <span itemprop="name">DrugBank 源文件 full_database.xml 文件的数据处理</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-12-17T15:02:44+08:00" content="2019-12-17">
-          12-17
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/12/15/双聚类及多聚类的概念/" itemprop="url">
-              
-                <span itemprop="name">双聚类及多聚类的概念</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-12-15T16:41:30+08:00" content="2019-12-15">
-          12-15
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
-
-    </div>
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -483,6 +552,13 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
 
         </div>
         
@@ -503,8 +579,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -564,6 +649,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#不同标签，不同颜色"><span class="nav-number">1.</span> <span class="nav-text">不同标签，不同颜色</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#同一类别，同一颜色"><span class="nav-number">2.</span> <span class="nav-text">同一类别，同一颜色 </span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -721,6 +822,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
