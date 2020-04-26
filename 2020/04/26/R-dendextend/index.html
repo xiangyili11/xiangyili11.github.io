@@ -105,20 +105,20 @@
 
 
 
-<meta name="description" content="R包dendextend是一个树状图绘图的综合工具，它提供了一系列的调整树状图的图形参数，如颜色，大小以及分支类型、节点和标签等，能用来可视化和比较树状图。接下来简单介绍其赋予不同样本（或标签）不同颜色的功能。">
+<meta name="description" content="摘要：R包dendextend是一个树状图绘图的综合工具，它提供了一系列的调整树状图的图形参数，如颜色，大小以及分支类型、节点和标签等，能用来可视化和比较树状图。接下来简单介绍其赋予不同样本（或标签）不同颜色的功能。">
 <meta name="keywords" content="R">
 <meta property="og:type" content="article">
 <meta property="og:title" content="R 语言绘图——给树状图标签赋予不同颜色">
 <meta property="og:url" content="https://eatdrinkbreathe.top/2020/04/26/R-dendextend/index.html">
 <meta property="og:site_name" content="Little Faith&#39;s Blog">
-<meta property="og:description" content="R包dendextend是一个树状图绘图的综合工具，它提供了一系列的调整树状图的图形参数，如颜色，大小以及分支类型、节点和标签等，能用来可视化和比较树状图。接下来简单介绍其赋予不同样本（或标签）不同颜色的功能。">
+<meta property="og:description" content="摘要：R包dendextend是一个树状图绘图的综合工具，它提供了一系列的调整树状图的图形参数，如颜色，大小以及分支类型、节点和标签等，能用来可视化和比较树状图。接下来简单介绍其赋予不同样本（或标签）不同颜色的功能。">
 <meta property="og:locale" content="zh-hans">
 <meta property="og:image" content="https://images.cnblogs.com/cnblogs_com/eat-drink-breathe-hard/1744659/o_200426105219Rplot-4.png">
 <meta property="og:image" content="https://images.cnblogs.com/cnblogs_com/eat-drink-breathe-hard/1744659/o_200426105232Rplot-6.png">
-<meta property="og:updated_time" content="2020-04-26T13:37:11.762Z">
+<meta property="og:updated_time" content="2020-04-26T13:40:12.860Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="R 语言绘图——给树状图标签赋予不同颜色">
-<meta name="twitter:description" content="R包dendextend是一个树状图绘图的综合工具，它提供了一系列的调整树状图的图形参数，如颜色，大小以及分支类型、节点和标签等，能用来可视化和比较树状图。接下来简单介绍其赋予不同样本（或标签）不同颜色的功能。">
+<meta name="twitter:description" content="摘要：R包dendextend是一个树状图绘图的综合工具，它提供了一系列的调整树状图的图形参数，如颜色，大小以及分支类型、节点和标签等，能用来可视化和比较树状图。接下来简单介绍其赋予不同样本（或标签）不同颜色的功能。">
 <meta name="twitter:image" content="https://images.cnblogs.com/cnblogs_com/eat-drink-breathe-hard/1744659/o_200426105219Rplot-4.png">
 
 
@@ -422,7 +422,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  392字
+                  394字
                 </span>
               
 
@@ -447,7 +447,7 @@
       
 
       
-        <p>R 包 <a href="https://cran.r-project.org/web/packages/dendextend/index.html" target="_blank" rel="noopener">dendextend</a> 是一个树状图绘图的综合工具，它提供了一系列的调整树状图的图形参数，如颜色，大小以及分支类型、节点和标签等，能用来可视化和比较树状图。接下来简单介绍其赋予不同样本（或标签）不同颜色的功能。<a id="more"></a></p>
+        <p>摘要：R 包 <a href="https://cran.r-project.org/web/packages/dendextend/index.html" target="_blank" rel="noopener">dendextend</a> 是一个树状图绘图的综合工具，它提供了一系列的调整树状图的图形参数，如颜色，大小以及分支类型、节点和标签等，能用来可视化和比较树状图。接下来简单介绍其赋予不同样本（或标签）不同颜色的功能。<a id="more"></a></p>
 <h4 id="不同标签，不同颜色"><a href="# 不同标签，不同颜色" class="headerlink" title="不同标签，不同颜色"></a>不同标签，不同颜色</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"># install.packages(&quot;dendextend&quot;)# 安装包</span><br><span class="line">library(dendextend)# 导入包</span><br><span class="line"></span><br><span class="line">data(USArrests)# 该数据集包含了 1973 年美国 50 个州每 10 万居民因犯罪而被捕的统计数据。</span><br><span class="line">dend &lt;- as.dendrogram(hclust(dist(USArrests[1:10,])))# 简单起见仅取 10 个样本</span><br><span class="line"></span><br><span class="line">### 原始图，没有区分颜色</span><br><span class="line">labels_colors(dend)# 查看树状图标签的颜色，没有赋值，所以没有颜色，结果为 NULL</span><br><span class="line">## NULL</span><br><span class="line">par(mfrow = c(1,2))</span><br><span class="line">plot(dend, main = &quot;Original dend&quot;)</span><br><span class="line"></span><br><span class="line">### 修饰图，增加区分颜色</span><br><span class="line">labels_colors(dend) &lt;- 1:10# 赋予 10 个样本 10 个标签</span><br><span class="line">plot(dend, main = &quot;A color for every state&quot;)</span><br></pre></td></tr></table></figure>
 <p><img src="https://images.cnblogs.com/cnblogs_com/eat-drink-breathe-hard/1744659/o_200426105219Rplot-4.png" alt></p>
 <h4 id="同一类别，同一颜色"><a href="# 同一类别，同一颜色" class="headerlink" title="同一类别，同一颜色"></a>同一类别，同一颜色 </h4><p> 有时候想直观地看看同一类别是否聚到了一起，可以给每一类赋予同一种颜色，增加区分度。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"># install.packages(&quot;dendextend&quot;)</span><br><span class="line">library(dendextend)</span><br><span class="line"></span><br><span class="line">small_iris &lt;- iris[c(1,2,3,51,52,53,101,102,103), ]</span><br><span class="line">dend &lt;- as.dendrogram(hclust(dist(small_iris[,-5])))</span><br><span class="line"></span><br><span class="line"># 原始图，没有区分颜色</span><br><span class="line">labels_colors(dend)</span><br><span class="line">## NULL</span><br><span class="line">par(mfrow = c(1,2))</span><br><span class="line">plot(dend, main = &quot;Original dend&quot;)</span><br><span class="line"></span><br><span class="line"># 修饰图，增加区分颜色</span><br><span class="line">types &lt;- factor(small_iris[,5])</span><br><span class="line">n_types &lt;- length(unique(small_iris[,5]))</span><br><span class="line">cols &lt;- colorspace::rainbow_hcl(n_types, c = 70, l  = 50)</span><br><span class="line">colors_to_use &lt;- cols[types]</span><br><span class="line"></span><br><span class="line">labels_colors(dend) &lt;- colors_to_use</span><br><span class="line">plot(dend, main = &quot;A color for every Species&quot;)</span><br></pre></td></tr></table></figure></p>
