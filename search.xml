@@ -13,12 +13,14 @@
       
       <categories>
           
-          <category> Python </category>
+          <category> 编程 </category>
           
       </categories>
       
       
         <tags>
+            
+            <tag> Python </tag>
             
             <tag> 统计检验 </tag>
             
@@ -295,9 +297,9 @@
       
         <tags>
             
-            <tag> 算法 </tag>
-            
             <tag> Connectivity Map </tag>
+            
+            <tag> 算法 </tag>
             
         </tags>
       
@@ -322,9 +324,9 @@
       
         <tags>
             
-            <tag> 算法 </tag>
-            
             <tag> Connectivity Map </tag>
+            
+            <tag> 算法 </tag>
             
         </tags>
       
