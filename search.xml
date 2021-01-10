@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>用 Rtools 辅助安装基于 C、C++、Fortran 的源代码 R 包</title>
+      <link href="/2021/01/10/%E7%94%A8Rtools%E8%BE%85%E5%8A%A9%E5%AE%89%E8%A3%85%E5%9F%BA%E4%BA%8EC%E3%80%81C++%E3%80%81Fortran%E7%9A%84%E6%BA%90%E4%BB%A3%E7%A0%81R%E5%8C%85/"/>
+      <url>/2021/01/10/%E7%94%A8Rtools%E8%BE%85%E5%8A%A9%E5%AE%89%E8%A3%85%E5%9F%BA%E4%BA%8EC%E3%80%81C++%E3%80%81Fortran%E7%9A%84%E6%BA%90%E4%BB%A3%E7%A0%81R%E5%8C%85/</url>
+      
+        <content type="html"><![CDATA[<p> 摘要：由于课题研究需要安装 R 包“MendelianRandomization”，但是它的依赖包非常多且复杂，安装的过程很容易报错。本文介绍其中一种依赖包“gmp”安装时报错“c:/rtools40/mingw32/bin/“g++”的解决方法 Rtools。<a id="more"></a></p><p> 主要报错内容如下：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">*** arch - i386</span><br><span class="line">&quot;c:/rtools40/mingw32/bin/&quot;g++  -std=gnu++11 -I&quot;D:/R/R-40~1.3/R-40~1.3/include&quot; -DNDEBUG          -O2 -Wall  -mfpmath=sse -msse2 -mstackrealign -c apply.cc -o apply.o</span><br><span class="line">sh: c:/rtools40/mingw32/bin/g++: No such file or directory</span><br><span class="line">make: *** [D:/R/R-40~1.3/R-40~1.3/etc/i386/Makeconf:227: apply.o] Error 127</span><br><span class="line">ERROR: compilation failed for package &apos;gmp&apos;</span><br><span class="line">* removing &apos;D:/R/R-4.0.3/R-4.0.3/library/gmp&apos;</span><br><span class="line"></span><br><span class="line"> 下载的程序包在 </span><br><span class="line">        ‘C:\Users\DEII\AppData\Local\Temp\RtmpIv7j4t\downloaded_packages’里 </span><br><span class="line">Warning message:</span><br><span class="line">In install.packages(&quot;gmp&quot;) : 安装程序包‘gmp’时退出狀態的值不是 0</span><br></pre></td></tr></table></figure><p><strong> 解决过程：</strong>  </p><p> 我看到这个报错内容的时候一直纠结于最后一句“Warning message: 安装程序包‘gmp’时退出狀態的值不是 0”，然后 google、百度，有人说这是 R 版本太旧了要升级 R 版本，但是我用的就是最新的 R 版本！此外，这只是个警告信息，不很重要。 </p><p> 然后循着报错内容往上看：“ERROR: compilation failed for package ‘gmp’”，这个是说包“gmp”安装失败。  </p><p> 继续往上看：“make: <em>*</em> [D:/R/R-40~1.3/R-40~1.3/etc/i386/Makeconf:227: apply.o] Error 127”，这里面也没有看到有用的信息。 </p><p>Keep going，“sh: c:/rtools40/mingw32/bin/g++: No such file or directory”，是说没有这个文件或者目录！原来是要安装 Rtools 这个工具！</p><p> 接下来，按照默认的方式安装 Rtools，会把 Rtools 安装到 c:/rtools40/，重新安装 R 包“gmp”，成功通过！</p><p><strong> 注意：</strong> 用 C/C++/Fortran 的源代码构建 R 包需要用到 Rtools，否则会报类似本文中的错误。默认情况下，R for Windows 安装来自 CRAN 的预编译“二进制软件包”，则不需要 rtools！另外，Rtools 的路径要添加到环境变量中才能发挥作用。</p><p><strong> 参考资料：</strong><br><a href="https://cran.r-project.org/bin/windows/Rtools/" target="_blank" rel="noopener">Rtools 安装、下载、路径设置与官网介绍 </a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 编程 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> R </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>用 Python 进行 KS 检验</title>
       <link href="/2020/10/11/%E7%94%A8python%E8%BF%9B%E8%A1%8CKS%E6%A3%80%E9%AA%8C/"/>
       <url>/2020/10/11/%E7%94%A8python%E8%BF%9B%E8%A1%8CKS%E6%A3%80%E9%AA%8C/</url>
@@ -20,9 +45,9 @@
       
         <tags>
             
-            <tag> Python </tag>
-            
             <tag> 统计检验 </tag>
+            
+            <tag> Python </tag>
             
         </tags>
       
